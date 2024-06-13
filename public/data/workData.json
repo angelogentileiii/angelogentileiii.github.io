@@ -1,0 +1,41 @@
+{
+    "workData": [
+        {
+            "workDates": ["April 2024", "June 2024"],
+            "position": "Software Engineering Intern",
+            "company": "Point Focal",
+            "workDetails": [
+                "Updated front-end TypeScript to incorporate new client modules and better the overall User Experience",
+                "Built, developed, and deployed an event-triggered AWS Lambda function to clean and insert financial data in the production MySQL database",
+                "Constructed an AWS CloudFormation template to deploy a new AWS S3 Bucket for the data to be stored, triggering the associated Lambda functionality",
+                "Developed a Ruby-based Selenium web scraping tool to automatically retrieve available reports from financial institutions",
+                "Leveraged Python Pandas to clean and analyze data sheets and to develop and export new files to be used for data visualization with Spotfire DXPs",
+                "Constructed Spotfire data connectors to production database for data visualization and analysis",
+                "Managed the email marketing and informational campaigns of the company, sent to over two thousand stakeholders"
+            ]
+        },
+        {
+            "workDates": ["January 2021", "Present"],
+            "position": "Digital Imaging Technician",
+            "company": "IATSE Local 600 - Freelance",
+            "workDetails": [
+                "Serves as a direct connection between the on-set visual production and the post workflow at the respective post-production facility, whether internal or external",
+                "In charge of managing and controlling multiple-camera systems simultaneously through local network control and specialized software programs",
+                "Responsible for the consistent exposure and color control of all camera systems, including variances through different optics",
+                "Ensures that all issues are properly elevated, when necessary, and resolved in a timely manner as to not detract from the strict daily production schedule"
+            ]
+        },
+        {
+            "workDates": ["June 2015", "Present"],
+            "position": "Camera Assistant / Technician",
+            "company": "IATSE Local 600 - Freelance",
+            "workDetails": [
+                "Integral part of the camera department through the production phase of a film, television, or commercial production",
+                "Builds and maintains the proper functionality of all camera-related items and accessories on a day-to-day basis",
+                "Constantly expanding technical knowledge of new camera systems and technologies in order to immediately implement items into production",
+                "Responsible for the hiring and onboarding of multiple camera teams across the run of production",
+                "Integrates with all on-set departments to facilitate all needs and resolve any issues related to the camera department or camera equipment"
+            ]
+        }
+    ]
+}
