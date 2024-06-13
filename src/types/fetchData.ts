@@ -4,23 +4,23 @@ export type FetchState<T> = {
     error: string | null;
 };
 
-export enum FetchAcions {
+export enum FetchActions {
     FETCH_SUCCESS = "FETCH_SUCCESS",
     FETCH_LOADING = "FETCH_LOADING",
     FETCH_ERROR = "FETCH_ERROR",
 }
 
 interface FetchDataSuccess<T> {
-    type: FetchAcions.FETCH_SUCCESS;
+    type: FetchActions.FETCH_SUCCESS;
     payload: T;
 }
 
 interface FetchDataLoading {
-    type: FetchAcions.FETCH_LOADING;
+    type: FetchActions.FETCH_LOADING;
 }
 
 interface FetchDataError {
-    type: FetchAcions.FETCH_ERROR;
+    type: FetchActions.FETCH_ERROR;
     payload: string;
 }
 
