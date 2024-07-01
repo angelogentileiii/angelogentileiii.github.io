@@ -5,6 +5,18 @@
             "description": "A React Native application to solve scheduling issues and informalities within the film and television industry. Crew Portal provides a mobile platform for technicians to integrate with production companies and share availability and union status while receiving more information up front from the company itself.",
             "image": "/assets/img/CrewPortalLogo.png",
             "url": "https://www.loom.com/share/290d5159b2d74832af4aac4974832b81"
+        },
+        {
+            "title": "RedLine Dealership",
+            "description": "A full stack web application meant to emulate an e-commerce site for the listing, purchase, and sale of vehicles. Users are able to upload vehicles to their profile, store favorites, and 'purchase' vehicles as desired.",
+            "image": "/assets/img/TestImage.png",
+            "url": "https://www.loom.com/share/90e5474b97e245d3ab84a530dd98ad14"
+        },
+        {
+            "title": "Run Tony Run",
+            "description": "A a 2D side-scolling adventure game where the player must collect gems to increase their score and traverse the treacherous map to reach the final end sign. Written entirely in Python and operated within the local terminal, Run Tony Run brings back the excitement of side-scrolling adventure games!",
+            "image": "/assets/img/RunTonyRun.png",
+            "url": "https://www.loom.com/share/b091df74f08547968f8356bcec33fc14"
         }
     ]
 }

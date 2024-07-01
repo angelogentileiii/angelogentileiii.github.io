@@ -1,4 +1,6 @@
-export const AboutMe = (): JSX.Element => {
+import TechStack from "../components/TechStack";
+
+export const AboutMe: React.FC = () => {
     return (
         <section id="about" className="section--container">
             <div className="about--section--content--box">
@@ -24,7 +26,7 @@ export const AboutMe = (): JSX.Element => {
                     </p>
                 </div>
                 <div className="about--section-tech">
-                    <div>TECH STACK ITEMS</div>
+                    <TechStack />
                 </div>
                 <button className="btn btn-primary">Get in Touch</button>
             </div>

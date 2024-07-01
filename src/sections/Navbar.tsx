@@ -17,6 +17,7 @@ export const NavBar = () => {
                 <a
                     href="/assets/pdfs/AGIII-Technical-Resume.pdf"
                     type="application/pdf"
+                    target="_blank"
                 >
                     Resume
                 </a>
