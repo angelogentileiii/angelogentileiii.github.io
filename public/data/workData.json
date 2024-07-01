@@ -1,7 +1,7 @@
 {
     "workData": [
         {
-            "workDates": ["April 2024", "June 2024"],
+            "workDates": 2024,
             "position": "Software Engineering Intern",
             "company": "Point Focal",
             "workDetails": [
@@ -15,9 +15,9 @@
             ]
         },
         {
-            "workDates": ["January 2021", "Present"],
+            "workDates": [2021, "Present"],
             "position": "Digital Imaging Technician",
-            "company": "IATSE Local 600 - Freelance",
+            "company": "IATSE Local 600",
             "workDetails": [
                 "Serves as a direct connection between the on-set visual production and the post workflow at the respective post-production facility, whether internal or external",
                 "In charge of managing and controlling multiple-camera systems simultaneously through local network control and specialized software programs",
@@ -26,9 +26,9 @@
             ]
         },
         {
-            "workDates": ["June 2015", "Present"],
+            "workDates": [2015, "Present"],
             "position": "Camera Assistant / Technician",
-            "company": "IATSE Local 600 - Freelance",
+            "company": "IATSE Local 600",
             "workDetails": [
                 "Integral part of the camera department through the production phase of a film, television, or commercial production",
                 "Builds and maintains the proper functionality of all camera-related items and accessories on a day-to-day basis",

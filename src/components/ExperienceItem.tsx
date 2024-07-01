@@ -1,29 +1,36 @@
 import React from "react";
-import { ExperienceItemProps, WorkExperience } from "../types";
+import { ExperienceData, Experience } from "../types";
 
-const ExperienceItem: React.FC<ExperienceItemProps> = ({ workData }) => {
+const ExperienceItem: React.FC<ExperienceData> = ({ workData }) => {
     return (
         <div>
-            {workData.map((experience: WorkExperience, index: number) => (
-                <div className="work--event" key={index}>
-                    <p className="work--event--dates">
-                        {experience.workDates[0] +
-                            " - " +
-                            experience.workDates[1]}
-                    </p>
-                    <h3 className="work--event-position">
-                        {experience.position}
-                    </h3>
-                    <p className="work--event--company">{experience.company}</p>
-                    {experience.workDetails.map(
-                        (detail: string, index: number) => (
-                            <p className="work--event--details" key={index}>
-                                {"- " + detail}
+            <div>
+                {workData.map((experience: Experience, expIndex: number) => {
+                    const { workDates, workDetails, position, company } =
+                        experience;
+                    return (
+                        <div className="work--event" key={expIndex}>
+                            <p className="work--event--dates">
+                                {Array.isArray(workDates)
+                                    ? workDates[0] + " - " + workDates[1]
+                                    : workDates}
                             </p>
-                        )
-                    )}
-                </div>
-            ))}
+                            <h3 className="work--event-position">{position}</h3>
+                            <p className="work--event--company">{company}</p>
+                            {workDetails.map(
+                                (detail: string, detailIndex: number) => (
+                                    <p
+                                        className="work--event--details"
+                                        key={detailIndex}
+                                    >
+                                        {"- " + detail}
+                                    </p>
+                                )
+                            )}
+                        </div>
+                    );
+                })}
+            </div>
         </div>
     );
 };

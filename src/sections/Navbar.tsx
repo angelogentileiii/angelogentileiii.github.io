@@ -4,10 +4,23 @@ export const NavBar = () => {
             <div>
                 <a href="#aboutMe">About</a>
             </div>
-            <div>Experience</div>
-            <div>Portfolio</div>
-            <div>Get In Touch</div>
-            <div>Resume</div>
+            <div>
+                <a href="#experience">Experience</a>
+            </div>
+            <div>
+                <a href="#portfolio">Portfolio</a>
+            </div>
+            <div>
+                <a href="#contact">Get In Touch</a>
+            </div>
+            <div>
+                <a
+                    href="/assets/pdfs/AGIII-Technical-Resume.pdf"
+                    type="application/pdf"
+                >
+                    Resume
+                </a>
+            </div>
         </header>
     );
 };

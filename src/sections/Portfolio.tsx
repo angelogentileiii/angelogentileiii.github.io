@@ -1,4 +1,14 @@
+import PortfolioItem from "../components/PortfolioItem";
+import useFetchData from "../hooks/useFetchData";
+import { PortfolioData } from "../types";
+
 export const Portfolio = () => {
+    const [data, loading, error] = useFetchData<PortfolioData>(
+        "/data/portfolioData.json"
+    );
+
+    const portfolioData = data ? data.portfolioData : [];
+
     return (
         <section id="portfolio" className="section--container">
             <div className="portfolio--section--content--box">
@@ -9,6 +19,13 @@ export const Portfolio = () => {
                         </span>{" "}
                         <br />
                     </h1>
+                    {error && (
+                        <div className="section--error">Error: {error}</div>
+                    )}
+                    {loading && <div>Loading...</div>}
+                    {portfolioData.length > 0 && (
+                        <PortfolioItem portfolioData={portfolioData} />
+                    )}
                 </div>
             </div>
         </section>

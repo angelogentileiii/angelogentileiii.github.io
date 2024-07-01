@@ -1,0 +1,10 @@
+{
+    "portfolioData": [
+        {
+            "title": "Crew Portal",
+            "description": "A React Native application to solve scheduling issues and informalities within the film and television industry. Crew Portal provides a mobile platform for technicians to integrate with production companies and share availability and union status while receiving more information up front from the company itself.",
+            "image": "/assets/img/CrewPortalLogo.png",
+            "url": "https://www.loom.com/share/290d5159b2d74832af4aac4974832b81"
+        }
+    ]
+}

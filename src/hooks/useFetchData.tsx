@@ -1,6 +1,7 @@
 import { useReducer, useEffect } from "react";
 import { FetchState, FetchAction, FetchActions } from "../types";
 
+// reducer for FetchData hook
 const fetchReducer = <T,>(
     state: FetchState<T>,
     action: FetchAction<T>
@@ -30,6 +31,7 @@ const fetchReducer = <T,>(
     }
 };
 
+// useFetchData hook >> interchangeable hook to fetch local JSON data for site
 const useFetchData = <T,>(url: string): [T | null, boolean, string | null] => {
     const [state, dispatch] = useReducer(fetchReducer, {
         data: null,
@@ -64,9 +66,11 @@ const useFetchData = <T,>(url: string): [T | null, boolean, string | null] => {
             }
         };
 
+        // runs the fetch data on page load or on URL change for hook arg
         fetchData();
     }, [url]);
 
+    // returns the data from the fetch (with typecasting of structure), loading state, and error state
     return [state.data as T, state.loading, state.error];
 };
 

@@ -24,7 +24,7 @@ export const AboutMe = (): JSX.Element => {
                     </p>
                 </div>
                 <div className="about--section-tech">
-                    <div>TECH STACH ITEMS</div>
+                    <div>TECH STACK ITEMS</div>
                 </div>
                 <button className="btn btn-primary">Get in Touch</button>
             </div>

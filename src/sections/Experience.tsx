@@ -1,15 +1,15 @@
 import ExperienceItem from "../components/ExperienceItem";
-import { ExperienceItemProps } from "../types";
+import { ExperienceData } from "../types";
 
 // Fetch Data Hook
 import useFetchData from "../hooks/useFetchData";
 
 export const Experience = () => {
-    const [data, loading, error] = useFetchData<ExperienceItemProps>(
+    const [data, loading, error] = useFetchData<ExperienceData>(
         "/data/workData.json"
     );
 
-    const workData = data?.workData ?? [];
+    const workData = data ? data.workData : [];
 
     return (
         <section id="experience" className="section--container">
