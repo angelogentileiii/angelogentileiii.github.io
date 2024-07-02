@@ -30,8 +30,10 @@ const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
                                 onClick={() => onImageClick(url)}
                                 style={imageStyle}
                             />
-                            <h3>{title}</h3>
-                            <p>{description}</p>
+                            <h3 className="project--title">{title}</h3>
+                            <p className="project--description">
+                                {description}
+                            </p>
                         </div>
                     );
                 })}

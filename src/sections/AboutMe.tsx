@@ -6,23 +6,30 @@ export const AboutMe: React.FC = () => {
             <div className="about--section--content--box">
                 <div className="about--section--content">
                     <h1 className="about--section--title">
-                        <span className="about--section--title--color">
+                        {/* <span className="about--section--title--color">
                             Get to Know Me
                         </span>{" "}
-                        <br />
+                        <br /> */}
                     </h1>
                     <p className="about--section--description">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing
-                        elit. Dolorum deleniti eius, a mollitia quasi tenetur
-                        ipsum voluptate aspernatur porro. Voluptatum repudiandae
-                        blanditiis iure dignissimos! Exercitationem voluptate
-                        illum optio cum inventore.
+                        As a full-stack software engineer and former digital
+                        imaging technician, I have spent over 9 years thriving
+                        in the dynamic, high-pressure environment of the
+                        multi-billion dollar film and television industry. This
+                        experience has fueled my determination and honed my
+                        detail-oriented nature, driving me to transition into a
+                        more technology-forward role where I can merge my
+                        creative and technical expertise.
                         <br />
                         <br />
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Enim nam amet aperiam alias sapiente inventore molestiae
-                        eaque omnis! Quas illum distinctio nam dolore, quam
-                        reiciendis! Officia accusantium reiciendis ut rerum!
+                        My passion lies in designing clean, maintainable code
+                        that meets stakeholders' needs effectively. The
+                        demanding nature of the film and television industry has
+                        sharpened my communication and team skills, making me a
+                        reliable and collaborative team player. I am a technical
+                        developer with the heart of an artist, committed to
+                        building strong connections and delivering exceptional
+                        results.
                     </p>
                 </div>
                 <div className="about--section-tech">
