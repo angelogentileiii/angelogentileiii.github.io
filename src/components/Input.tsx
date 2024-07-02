@@ -9,11 +9,10 @@ const Input: React.FC<InputProps> = ({
 }) => {
     const errorDetails = error && error[name];
     const errorMessage = errorDetails?.message;
-    console.log(errorMessage);
 
     return (
         <div className="input--block">
-            <input className="test" {...register(name, rules)} {...rest} />
+            <input className={name} {...register(name, rules)} {...rest} />
             {errorMessage && typeof errorMessage === "string" && (
                 <span className="error-message">{errorMessage}</span>
             )}

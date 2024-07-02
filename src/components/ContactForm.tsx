@@ -1,5 +1,7 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Input from "./Input";
+import contactInputFields from "../configs/formConfigs/contactInputFields";
+import PhoneInput from "./PhoneInput";
 
 const ContactForm: React.FC = () => {
     const {
@@ -8,52 +10,42 @@ const ContactForm: React.FC = () => {
         formState: { errors },
     } = useForm<FieldValues>();
 
-    const onSubmit: SubmitHandler<FieldValues> = (data) => {
+    const onSubmit: SubmitHandler<FieldValues> = (data): void => {
         console.log(data); // Logs the entire f
     };
 
     return (
         <div className="contact--form--container">
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <Input
-                    name="firstName"
-                    placeholder="First Name"
-                    register={register}
-                    rules={{
-                        required: "A valid first name is required.",
-                        maxLength: 20,
-                        pattern: {
-                            value: /^[A-Za-z]+$/i,
-                            message:
-                                "First name must only contain alphabetical letters.",
-                        },
-                    }}
-                    error={errors}
-                />
-                <Input
-                    name="lastName"
-                    placeholder="Last Name"
-                    register={register}
-                    rules={{
-                        required: "A valid last name is required.",
-                        maxLength: 20,
-                        pattern: {
-                            value: /^[A-Za-z]+$/i,
-                            message:
-                                "Last name must only contain alphabetical letters.",
-                        },
-                    }}
-                    error={errors}
-                />
-                <Input
-                    name="email"
-                    placeholder="Email"
-                    register={register}
-                    rules={{ required: "A valid email is required." }}
-                    error={errors}
-                />
+            <form className="contact--form" onSubmit={handleSubmit(onSubmit)}>
+                {contactInputFields.map((field, index: number) => {
+                    const { name, placeholder, rules } = field;
+                    if (name === "phone") {
+                        return (
+                            <PhoneInput
+                                key={index + name}
+                                name={name}
+                                placeholder={placeholder}
+                                register={register}
+                                rules={rules}
+                                error={errors}
+                            />
+                        );
+                    }
+                    return (
+                        <Input
+                            key={index + name}
+                            name={name}
+                            placeholder={placeholder}
+                            register={register}
+                            rules={rules}
+                            error={errors}
+                        />
+                    );
+                })}
                 <br />
-                <button type="submit">Submit</button>
+                <button className="contact--form--button" type="submit">
+                    Submit
+                </button>
             </form>
         </div>
     );
