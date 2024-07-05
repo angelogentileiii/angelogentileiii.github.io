@@ -15,19 +15,27 @@ jobs:
             - name: Checkout repository
               uses: actions/checkout@v2
 
+            - name: Set Git identity
+              run: |
+                  git config --global user.email "angelo.john.gentile@gmail.com"
+                  git config --global user.name "Angelo Gentile III"
+
             - name: Set up Node.js
               uses: actions/setup-node@v2
               with:
                   node-version: "14"
 
-            - name: Install dependencies
+            - name: Install Dependencies
               run: npm install
 
-            - name: Build and deploy
+            - name: Build application
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub token for pushing to the repo
                   AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
                   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
               run: |
                   npm run predeploy # command to build application
+
+            - name: Deploy to Github Pages
+              run: |
                   npm run deploy # command to deploy application
