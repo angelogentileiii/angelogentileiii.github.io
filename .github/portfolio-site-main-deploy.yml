@@ -5,6 +5,7 @@ on:
         branches:
             - main
             - gh-pages
+    workflow_dispatch:
 
 jobs:
     deploy:
