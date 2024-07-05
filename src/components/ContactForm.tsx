@@ -2,6 +2,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import contactInputFields from "../configs/formConfigs/contactInputFields";
 import CustomPhoneInput from "./PhoneInput";
+import EmailAction from "../configs/email/EmailAction";
 // import { ContactFormData } from "../types";
 
 const ContactForm: React.FC = () => {
@@ -11,8 +12,9 @@ const ContactForm: React.FC = () => {
         formState: { errors },
     } = useForm<FieldValues>();
 
-    const onSubmit: SubmitHandler<FieldValues> = (data): void => {
-        console.log(data); // Logs the entire f
+    const onSubmit: SubmitHandler<FieldValues> = (data: FieldValues): void => {
+        console.log(data); // Logs the entire form data
+        EmailAction(data);
     };
 
     return (
