@@ -30,7 +30,7 @@ const contactInputFields = [
             required: "A valid email is required.",
             pattern: {
                 value: /([a-zA-Z0-9._%+-]+)@([a-zA-Z0-9.-]+)\.([a-zA-Z]{2,63})$/,
-                message: "Email must be entered in form example@email.com",
+                message: "Email must be entered in format: 'example@email.com'",
             },
         },
     },
@@ -39,7 +39,19 @@ const contactInputFields = [
         placeholder: "Phone (Optional)",
         rules: {
             required: false,
-            pattern: {},
+            pattern: {
+                value: /^(\+?\d{1,3}[-.\s]?)?(\(?\d{3}\)?[-.\s]?)?\d{3}[-.\s]?\d{4}([-.\s]?\d{1,5})?$/,
+                message:
+                    "Phone number can only contain a maximum of 15 numerical values",
+            },
+        },
+    },
+    {
+        name: "message",
+        placeholder: "What would you like to say?",
+        rules: {
+            reqired: false,
+            maxLength: 200,
         },
     },
 ];

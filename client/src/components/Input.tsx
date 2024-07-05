@@ -12,7 +12,11 @@ const Input: React.FC<InputProps> = ({
 
     return (
         <div className="input--block">
-            <input className={name} {...register(name, rules)} {...rest} />
+            <input
+                className={error?.[name] ? `input-error ${name}` : name}
+                {...register(name, rules)}
+                {...rest}
+            />
             {errorMessage && typeof errorMessage === "string" && (
                 <span className="error-message">{errorMessage}</span>
             )}

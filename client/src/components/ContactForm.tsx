@@ -1,11 +1,12 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import contactInputFields from "../configs/formConfigs/contactInputFields";
-import PhoneInput from "./PhoneInput";
+import CustomPhoneInput from "./PhoneInput";
+// import { ContactFormData } from "../types";
 
 const ContactForm: React.FC = () => {
     const {
-        register,
+        control,
         handleSubmit,
         formState: { errors },
     } = useForm<FieldValues>();
@@ -17,18 +18,20 @@ const ContactForm: React.FC = () => {
     return (
         <div className="contact--form--container">
             <form className="contact--form" onSubmit={handleSubmit(onSubmit)}>
-                {contactInputFields.map((field, index: number) => {
-                    const { name, placeholder, rules } = field;
+                {contactInputFields.map((input, index: number) => {
+                    const { name, placeholder, rules } = input;
                     if (name === "phone") {
                         return (
-                            <PhoneInput
-                                key={index + name}
-                                name={name}
-                                placeholder={placeholder}
-                                register={register}
-                                rules={rules}
-                                error={errors}
-                            />
+                            <div key={index + name}>
+                                <CustomPhoneInput
+                                    key={index + name}
+                                    name={name}
+                                    placeholder={placeholder}
+                                    register={control.register}
+                                    rules={rules}
+                                    error={errors}
+                                />
+                            </div>
                         );
                     }
                     return (
@@ -36,7 +39,7 @@ const ContactForm: React.FC = () => {
                             key={index + name}
                             name={name}
                             placeholder={placeholder}
-                            register={register}
+                            register={control.register}
                             rules={rules}
                             error={errors}
                         />

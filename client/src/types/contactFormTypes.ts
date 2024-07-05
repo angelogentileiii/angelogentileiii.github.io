@@ -7,3 +7,11 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     rules?: {};
     error?: FieldErrors<FieldValues>;
 }
+
+export interface ContactFormData {
+    firstName: string;
+    lastName: string;
+    email: string;
+    phone?: string;
+    message?: string;
+}
