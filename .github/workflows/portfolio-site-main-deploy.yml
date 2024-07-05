@@ -18,7 +18,7 @@ jobs:
             - name: Set Git identity
               run: |
                   git config --global user.email "angelo.john.gentile@gmail.com"
-                  git config --global user.name "Angelo Gentile III"
+                  git config --global user.name "angelogentileiii"
 
             - name: Set up Node.js
               uses: actions/setup-node@v2
@@ -29,13 +29,15 @@ jobs:
               run: npm install
 
             - name: Build application
+              run: |
+                  npm run predeploy # command to build application
+
+            - name: Deploy to Github Pages
               env:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # GitHub token for pushing to the repo
                   AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
                   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
               run: |
-                  npm run predeploy # command to build application
-
-            - name: Deploy to Github Pages
-              run: |
+                  git config user.email "angelo.john.gentile@gmail.com"
+                  git config  user.name "angelogentileiii"
                   npm run deploy # command to deploy application
