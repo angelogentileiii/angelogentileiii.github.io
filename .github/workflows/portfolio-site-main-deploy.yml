@@ -30,7 +30,7 @@ jobs:
 
             - name: Build application
               env:
-                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub token for pushing to the repo
+                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }} # GitHub token for pushing to the repo
                   AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
                   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
               run: |
