@@ -58,3 +58,5 @@ jobs:
                   GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
                   AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
                   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
+                  CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}

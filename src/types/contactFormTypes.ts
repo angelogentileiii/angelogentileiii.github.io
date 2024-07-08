@@ -15,3 +15,17 @@ export interface ContactFormData {
     phone?: string;
     message?: string;
 }
+
+interface EmailSuccess {
+    success: true;
+    successMessage: string;
+}
+
+interface EmailFail {
+    success: false;
+    errors: {
+        message: string;
+    };
+}
+
+export type EmailReturnType = EmailSuccess | EmailFail;

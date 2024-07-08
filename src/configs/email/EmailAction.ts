@@ -1,33 +1,28 @@
 import { FieldValues } from "react-hook-form";
+import { EmailReturnType } from "../../types";
 import SendEmail from "./SendEmail";
 
-interface EmailSuccess {
-    success: true;
-    successMessage: string;
-}
-
-interface EmailFail {
-    success: false;
-    errors: {
-        message: string;
-    };
-}
-
-type EmailReturnType = EmailSuccess | EmailFail;
-
 const EmailAction = async (data: FieldValues): Promise<EmailReturnType> => {
+    const { firstName, lastName, phone, email, message } = data;
+
     const params = {
-        Source: data.email,
+        Source: process.env.CONTACT_FORM_SENDER!,
         Destination: {
-            ToAddresses: ["angelogentileiii@gmail.com"],
+            ToAddresses: [process.env.CONTACT_FORM_RECIPIENT!],
         },
         Message: {
             Subject: {
-                Data: `${data.firstName} ${data.lastName} Submitted the Contact Form`,
+                Data: `${firstName} ${lastName} Submitted the Contact Form`,
             },
             Body: {
                 Html: {
-                    Data: data.message,
+                    Data: `
+                    First Name: ${firstName}
+                    Last Name: ${lastName}
+                    Email: ${email}
+                    Phone (Optional): ${phone}
+                    Message: ${message}
+                    `,
                 },
             },
         },

@@ -10,11 +10,16 @@ const ContactForm: React.FC = () => {
         control,
         handleSubmit,
         formState: { errors },
+        reset,
     } = useForm<FieldValues>();
 
-    const onSubmit: SubmitHandler<FieldValues> = (data: FieldValues): void => {
+    const onSubmit: SubmitHandler<FieldValues> = async (
+        data: FieldValues
+    ): Promise<void> => {
         console.log(data); // Logs the entire form data
-        EmailAction(data);
+        const emailResponse = await EmailAction(data);
+        console.log(emailResponse);
+        reset();
     };
 
     return (
