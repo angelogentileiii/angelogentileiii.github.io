@@ -43,10 +43,7 @@ jobs:
                   AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                   CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
                   CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}
-              run: |
-                  echo "AWS_ACCESS_KEY=${AWS_ACCESS_KEY}"
-                  echo "AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}"
-                  npm run build
+              run: npm run build
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
