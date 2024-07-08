@@ -1,5 +1,10 @@
 import { InputHTMLAttributes } from "react";
-import { FieldValues, FieldErrors, UseFormRegister } from "react-hook-form";
+import {
+    FieldValues,
+    FieldErrors,
+    UseFormRegister,
+    UseFormSetValue,
+} from "react-hook-form";
 
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     name: string;
@@ -14,6 +19,10 @@ export interface ContactFormData {
     email: string;
     phone?: string;
     message?: string;
+}
+
+export interface PhoneInputProps extends InputProps {
+    setValue: UseFormSetValue<FieldValues>;
 }
 
 interface EmailSuccess {

@@ -1,15 +1,14 @@
-import { useState } from "react";
-import { InputProps } from "../types";
+import { PhoneInputProps } from "../types";
 
-const PhoneInput: React.FC<InputProps> = ({
+const PhoneInput: React.FC<PhoneInputProps> = ({
     name,
     register,
     placeholder,
     rules,
+    setValue,
     error,
     ...rest
 }) => {
-    const [formattedValue, setFormattedValue] = useState("");
     const errorDetails = error && error[name];
     const errorMessage = errorDetails?.message;
 
@@ -52,7 +51,7 @@ const PhoneInput: React.FC<InputProps> = ({
             }
         }
 
-        setFormattedValue(value);
+        setValue(name, value);
     };
 
     return (
@@ -61,7 +60,6 @@ const PhoneInput: React.FC<InputProps> = ({
                 className={error?.[name] ? `input-error ${name}` : name}
                 placeholder={placeholder}
                 {...register(name, rules)}
-                value={formattedValue}
                 onChange={handlePhoneChange}
             />
             {errorMessage && typeof errorMessage === "string" && (

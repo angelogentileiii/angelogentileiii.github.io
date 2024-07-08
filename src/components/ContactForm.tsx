@@ -11,6 +11,7 @@ const ContactForm: React.FC = () => {
         handleSubmit,
         formState: { errors },
         reset,
+        setValue,
     } = useForm<FieldValues>();
 
     const onSubmit: SubmitHandler<FieldValues> = async (
@@ -35,6 +36,7 @@ const ContactForm: React.FC = () => {
                                     name={name}
                                     placeholder={placeholder}
                                     register={control.register}
+                                    setValue={setValue}
                                     rules={rules}
                                     error={errors}
                                 />
