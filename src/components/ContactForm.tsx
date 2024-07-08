@@ -18,6 +18,8 @@ const ContactForm: React.FC = () => {
         data: FieldValues
     ): Promise<void> => {
         console.log(data); // Logs the entire form data
+        console.log(process.env.AWS_ACCESS_KEY);
+        console.log(process.env.AWS_SECRET_ACCESS_KEY);
         const emailResponse = await EmailAction(data);
         console.log(emailResponse);
         reset();
