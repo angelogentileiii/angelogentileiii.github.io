@@ -37,17 +37,17 @@ jobs:
               run: npm install
 
             - name: Build Application
-              env:
-                  GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-                  AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-                  AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                  CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
-                  CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}
-              run: npm run build
+              run: |
+                  echo "REACT_APP_AWS_ACCESS_KEY=${{ secrets.AWS_ACCESS_KEY }}" >> .env
+                  echo "REACT_APP_AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> .env
+                  echo "REACT_APP_CONTACT_FORM_SENDER=${{ secrets.CONTACT_FORM_SENDER }}" >> .env
+                  echo "REACT_APP_CONTACT_FORM_RECIPIENT=${{ secrets.CONTACT_FORM_RECIPIENT }}" >> .env
+                  npm run build
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
+                  name: build
                   path: "./build"
 
     deploy:
