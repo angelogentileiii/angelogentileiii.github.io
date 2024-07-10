@@ -42,11 +42,13 @@ jobs:
 
             - name: Build Application
               env:
-                  REACT_APP_GH_TOKEN: ${{ secrets.GH_TOKEN }}
-                  REACT_APP_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
-                  REACT_APP_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-                  REACT_APP_CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
-                  REACT_APP_CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}
+                  VITE_GH_TOKEN: ${{ secrets.GH_TOKEN }}
+                  VITE_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+                  VITE_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  VITE_CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
+                  VITE_CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}
+                  VITE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+                  VITE_RECAPTCHA_SECRET_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SECRET_KEY}}
               run: |
                   npm ci
                   npm run build

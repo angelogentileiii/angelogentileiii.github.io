@@ -6,9 +6,9 @@ const EmailAction = async (data: FieldValues): Promise<EmailReturnType> => {
     const { firstName, lastName, phone, email, message } = data;
 
     const params = {
-        Source: process.env.REACT_APP_CONTACT_FORM_SENDER!,
+        Source: process.env.VITE_CONTACT_FORM_SENDER!,
         Destination: {
-            ToAddresses: [process.env.REACT_APP_CONTACT_FORM_RECIPIENT!],
+            ToAddresses: [process.env.VITE_CONTACT_FORM_RECIPIENT!],
         },
         Message: {
             Subject: {

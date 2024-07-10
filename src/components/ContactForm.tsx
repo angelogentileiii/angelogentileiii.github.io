@@ -2,7 +2,7 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import contactInputFields from "../configs/formConfigs/contactInputFields";
 import CustomPhoneInput from "./PhoneInput";
-import EmailAction from "../configs/email/EmailAction";
+import EmailAction from "../actions/email/EmailAction";
 import {
     GoogleReCaptchaProvider,
     useGoogleReCaptcha,
@@ -82,7 +82,7 @@ const ContactForm: React.FC = () => {
 const ContactFormRecaptcha = () => {
     return (
         <GoogleReCaptchaProvider
-            reCaptchaKey={process.env.REACT_APP_RECAPTCHA_SITE_KEY!}
+            reCaptchaKey={process.env.VITE_RECAPTCHA_SITE_KEY!}
         >
             <ContactForm />
         </GoogleReCaptchaProvider>

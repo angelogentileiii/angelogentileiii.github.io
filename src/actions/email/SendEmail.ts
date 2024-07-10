@@ -13,8 +13,8 @@ const getSESClient = (): SESClient => {
         sesClient = new SESClient({
             region: "us-east-1",
             credentials: {
-                accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY!,
-                secretAccessKey: process.env.REACT_APP_AWS_SECRET_ACCESS_KEY!,
+                accessKeyId: process.env.VITE_AWS_ACCESS_KEY!,
+                secretAccessKey: process.env.VITE_AWS_SECRET_ACCESS_KEY!,
             },
         });
     }
