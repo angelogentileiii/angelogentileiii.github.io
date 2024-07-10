@@ -1,10 +1,10 @@
 import {
     AboutMe,
-    Contact,
     HeroSection,
     Portfolio,
     Experience,
     NavBar,
+    Contact,
 } from "../sections";
 
 const App = () => {

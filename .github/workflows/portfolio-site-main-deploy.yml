@@ -7,11 +7,6 @@ on:
 
     workflow_dispatch:
 
-permissions:
-    contents: read
-    pages: write
-    id-token: write
-
 concurrency:
     group: "pages"
     cancel-in-progress: false
@@ -29,12 +24,17 @@ jobs:
                   git config --local user.name "angelogentileiii"
 
             - name: Set up Node.js
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v3
               with:
-                  node-version: "14"
+                  node-version: "18"
 
-            - name: Install Dependencies
-              run: npm install
+            - name: Cache dependencies
+              uses: actions/cache@v3
+              with:
+                  path: ~/.npm
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+                  restore-keys: |
+                      ${{ runner.os }}-node-
 
             - name: Build Application
               env:
@@ -44,12 +44,13 @@ jobs:
                   REACT_APP_CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
                   REACT_APP_CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}
               run: |
+                  npm ci
                   npm run build
 
             - name: Upload artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: "./build"
+                  path: "./dist"
 
     deploy:
         environment:
