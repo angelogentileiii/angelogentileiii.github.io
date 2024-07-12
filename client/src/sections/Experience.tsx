@@ -1,5 +1,5 @@
 import ExperienceItem from "../components/ExperienceItem";
-import { ExperienceData } from "../../types";
+import { ExperienceData } from "../../types/index.types";
 
 // Fetch Data Hook
 import useFetchData from "../hooks/useFetchData";

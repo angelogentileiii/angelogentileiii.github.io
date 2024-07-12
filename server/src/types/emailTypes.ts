@@ -13,6 +13,10 @@ interface EmailFail {
 
 export type EmailReturnType = EmailSuccess | EmailFail;
 
+interface RecaptchaToken {
+    token: string;
+}
+
 export interface EmailData {
     firstName: string;
     lastName: string;
@@ -20,3 +24,5 @@ export interface EmailData {
     phone?: string;
     message?: string;
 }
+
+export type EmailRequest = EmailData & RecaptchaToken;

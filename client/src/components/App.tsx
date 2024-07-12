@@ -5,7 +5,7 @@ import {
     Experience,
     NavBar,
     Contact,
-} from "../sections";
+} from "../sections/index.sections";
 
 const App = () => {
     return (

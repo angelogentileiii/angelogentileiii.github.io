@@ -1,5 +1,5 @@
 import React from "react";
-import { PortfolioData, Project } from "../../types";
+import { PortfolioData, Project } from "../../types/index.types";
 
 const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
     const onImageClick = (url: string): void => {

@@ -2,7 +2,6 @@ import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import Input from "./Input";
 import contactInputFields from "../configs/formConfigs/contactInputFields";
 import CustomPhoneInput from "./PhoneInput";
-import EmailAction from "../actions/email/EmailAction";
 import {
     GoogleReCaptchaProvider,
     useGoogleReCaptcha,
@@ -33,9 +32,13 @@ const ContactForm: React.FC = () => {
         try {
             const token = await executeRecaptcha("contactForm");
 
-            // verifyCaptchaAction(token);
-
-            const emailResponse = await axios.post("/api/send-email", data); // Send data to your backend including the recaptchaToken
+            const emailResponse = await axios.post(
+                `${import.meta.env.VITE_BACKEND_URL}/send-email`,
+                {
+                    ...data,
+                    token,
+                }
+            );
 
             console.log("email response: ", emailResponse);
 

@@ -1,4 +1,4 @@
-import { PhoneInputProps } from "../../types";
+import { PhoneInputProps } from "../../types/index.types";
 
 const PhoneInput: React.FC<PhoneInputProps> = ({
     name,

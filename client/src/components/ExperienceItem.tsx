@@ -1,5 +1,5 @@
 import React from "react";
-import { ExperienceData, Experience } from "../../types";
+import { ExperienceData, Experience } from "../../types/index.types";
 
 const ExperienceItem: React.FC<ExperienceData> = ({ workData }) => {
     return (

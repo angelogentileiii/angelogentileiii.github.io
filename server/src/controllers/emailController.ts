@@ -4,7 +4,7 @@ import {
     SendBounceCommandOutput,
     SESClient,
 } from "@aws-sdk/client-ses";
-import { EmailReturnType, EmailData } from "../types";
+import { EmailReturnType, EmailRequest } from "../types/index.types";
 import { Request, Response, NextFunction } from "express";
 
 // Singleton SES client instance
@@ -38,7 +38,7 @@ const sendEmailWithSES = async (
 };
 
 export const handleSendEmail = async (
-    req: Request<any, any, EmailData>,
+    req: Request<any, any, EmailRequest>,
     res: Response<EmailReturnType>,
     next: NextFunction
 ): Promise<void> => {
@@ -87,14 +87,4 @@ export const handleSendEmail = async (
             },
         });
     }
-};
-
-export const getEmails = (
-    req: Request,
-    res: Response,
-    next: NextFunction
-): void => {
-    res.json({
-        data: ["you've hit the endpoint", "congratulations"],
-    });
 };

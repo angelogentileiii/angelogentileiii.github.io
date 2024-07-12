@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from "react";
-import { FetchState, FetchAction, FetchActions } from "../../types";
+import { FetchState, FetchAction, FetchActions } from "../../types/index.types";
 
 // reducer for FetchData hook
 const fetchReducer = <T,>(
