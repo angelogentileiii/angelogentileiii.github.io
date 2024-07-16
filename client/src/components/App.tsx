@@ -9,7 +9,7 @@ import {
 
 const App = () => {
     return (
-        <div id="App">
+        <div id="App" className="font-sans">
             <NavBar />
             <HeroSection />
             <AboutMe />
