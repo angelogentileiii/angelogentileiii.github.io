@@ -1,4 +1,4 @@
-import ContactFormRecaptcha from "../components/ContactForm";
+import { ContactFormRecaptcha } from "../components/index.components";
 
 export const Contact: React.FC = () => {
     // Tie into a small backend to send emails to my email address

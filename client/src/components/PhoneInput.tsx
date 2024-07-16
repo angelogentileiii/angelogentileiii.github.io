@@ -1,6 +1,6 @@
 import { PhoneInputProps } from "../../types/index.types";
 
-const PhoneInput: React.FC<PhoneInputProps> = ({
+export const PhoneInput: React.FC<PhoneInputProps> = ({
     name,
     register,
     placeholder,
@@ -68,5 +68,3 @@ const PhoneInput: React.FC<PhoneInputProps> = ({
         </div>
     );
 };
-
-export default PhoneInput;

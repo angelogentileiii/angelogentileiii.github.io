@@ -1,6 +1,6 @@
 import { InputProps } from "../../types/index.types";
 
-const Input: React.FC<InputProps> = ({
+export const Input: React.FC<InputProps> = ({
     name,
     register,
     rules,
@@ -23,5 +23,3 @@ const Input: React.FC<InputProps> = ({
         </div>
     );
 };
-
-export default Input;

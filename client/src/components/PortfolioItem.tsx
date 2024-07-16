@@ -1,7 +1,7 @@
 import React from "react";
 import { PortfolioData, Project } from "../../types/index.types";
 
-const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
+export const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
     const onImageClick = (url: string): void => {
         window.open(url, "_blank", "noopener,noreferrer");
     };
@@ -41,5 +41,3 @@ const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
         </div>
     );
 };
-
-export default PortfolioItem;

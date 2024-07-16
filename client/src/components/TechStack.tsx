@@ -1,6 +1,6 @@
 import { techStack } from "../assets/tech-stack";
 
-const TechStack: React.FC = () => {
+export const TechStack: React.FC = () => {
     const imageStyle = {
         width: "75px",
         height: "75px",
@@ -26,5 +26,3 @@ const TechStack: React.FC = () => {
         </div>
     );
 };
-
-export default TechStack;

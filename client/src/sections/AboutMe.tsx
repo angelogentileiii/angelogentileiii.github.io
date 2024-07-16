@@ -1,4 +1,4 @@
-import TechStack from "../components/TechStack";
+import { TechStack } from "../components/index.components";
 
 export const AboutMe: React.FC = () => {
     return (

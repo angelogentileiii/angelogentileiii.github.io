@@ -1,4 +1,4 @@
-import ExperienceItem from "../components/ExperienceItem";
+import { ExperienceItem } from "../components/index.components";
 import { ExperienceData } from "../../types/index.types";
 
 // Fetch Data Hook
@@ -6,7 +6,7 @@ import useFetchData from "../hooks/useFetchData";
 
 export const Experience = () => {
     const [data, loading, error] = useFetchData<ExperienceData>(
-        "client/public/data/workData.json"
+        "/data/workData.json"
     );
 
     const workData = data ? data.workData : [];

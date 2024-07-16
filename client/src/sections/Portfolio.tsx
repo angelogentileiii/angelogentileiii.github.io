@@ -1,10 +1,10 @@
-import PortfolioItem from "../components/PortfolioItem";
+import { PortfolioItem } from "../components/index.components";
 import useFetchData from "../hooks/useFetchData";
 import { PortfolioData } from "../../types/index.types";
 
 export const Portfolio = () => {
     const [data, loading, error] = useFetchData<PortfolioData>(
-        "client/public/data/portfolioData.json"
+        "/data/portfolioData.json"
     );
 
     const portfolioData = data ? data.portfolioData : [];

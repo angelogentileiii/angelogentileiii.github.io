@@ -1,7 +1,7 @@
 import React from "react";
 import { ExperienceData, Experience } from "../../types/index.types";
 
-const ExperienceItem: React.FC<ExperienceData> = ({ workData }) => {
+export const ExperienceItem: React.FC<ExperienceData> = ({ workData }) => {
     return (
         <div>
             <div>
@@ -34,5 +34,3 @@ const ExperienceItem: React.FC<ExperienceData> = ({ workData }) => {
         </div>
     );
 };
-
-export default ExperienceItem;

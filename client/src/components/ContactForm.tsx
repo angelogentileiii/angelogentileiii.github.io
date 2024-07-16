@@ -1,7 +1,6 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import Input from "./Input";
+import { Input, PhoneInput as CustomPhoneInput } from "./index.components";
 import contactInputFields from "../configs/formConfigs/contactInputFields";
-import CustomPhoneInput from "./PhoneInput";
 import {
     GoogleReCaptchaProvider,
     useGoogleReCaptcha,
@@ -88,7 +87,7 @@ const ContactForm: React.FC = () => {
     );
 };
 
-const ContactFormRecaptcha = () => {
+export const ContactFormRecaptcha = () => {
     return (
         <GoogleReCaptchaProvider
             reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
@@ -97,5 +96,3 @@ const ContactFormRecaptcha = () => {
         </GoogleReCaptchaProvider>
     );
 };
-
-export default ContactFormRecaptcha;
