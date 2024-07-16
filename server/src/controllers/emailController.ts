@@ -4,7 +4,7 @@ import {
     SendBounceCommandOutput,
     SESClient,
 } from "@aws-sdk/client-ses";
-import { EmailReturnType, EmailRequest } from "../types/index.types";
+import { EmailReturnType, EmailSESPayload } from "../types/index.types";
 import { Request, Response, NextFunction } from "express";
 
 // Singleton SES client instance
@@ -38,11 +38,12 @@ const sendEmailWithSES = async (
 };
 
 export const handleSendEmail = async (
-    req: Request<any, any, EmailRequest>,
+    req: Request<any, any, EmailSESPayload>,
     res: Response<EmailReturnType>,
     next: NextFunction
 ): Promise<void> => {
-    const { firstName, lastName, phone, email, message } = req.body;
+    const { firstName, lastName, phone, email, message, tokenSuccess } =
+        req.body;
 
     const params = {
         Source: process.env.VITE_CONTACT_FORM_SENDER!,
@@ -75,11 +76,13 @@ export const handleSendEmail = async (
             res.status(200).json({
                 success: true,
                 successMessage: "Email sent successfully.",
+                tokenSuccess: tokenSuccess,
             });
     } catch (error) {
         console.error("SES SendEmail Error:", error);
         res.status(500).json({
             success: false,
+            tokenSuccess: tokenSuccess,
             errors: {
                 message:
                     "An error occurred while attempting to send your message.",

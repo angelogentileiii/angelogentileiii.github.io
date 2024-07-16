@@ -1,5 +1,9 @@
-import axios from "axios";
-import { EmailRequest } from "../types/index.types";
+import axios, { AxiosResponse } from "axios";
+import {
+    EmailRequest,
+    EmailSESPayload,
+    GoogleRecaptchaResponse,
+} from "../types/index.types";
 import { Request, Response, NextFunction } from "express";
 
 export const verifyRecaptchaToken = async (
@@ -24,7 +28,10 @@ export const verifyRecaptchaToken = async (
             response: token,
         });
 
-        const response = await axios.post(url, params);
+        const response = await axios.post<
+            any,
+            AxiosResponse<GoogleRecaptchaResponse>
+        >(url, params);
 
         const { success } = response.data;
 
@@ -34,9 +41,21 @@ export const verifyRecaptchaToken = async (
                 .json({ message: "Recaptcha verification failed" });
         }
 
+        req.body = {
+            ...req.body,
+            tokenSuccess: success,
+        } as EmailRequest & EmailSESPayload;
+
         next();
     } catch (error) {
         console.error("Error verifying reCaptcha token:", error);
-        return res.status(500).json({ message: "Internal server error" });
+
+        // Handle Axios error response (if available)
+        const errorMessage =
+            axios.isAxiosError(error) && error.response
+                ? error.response.data.message
+                : "Internal server error";
+
+        return res.status(500).json({ message: errorMessage });
     }
 };

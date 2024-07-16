@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "frontend": "vite",
+        "frontend": "vite --config client/vite.config.js",
         "backend": "nodemon server/server.ts",
         "dev": "concurrently \"npm run frontend\" \"npm run backend\""
     },
