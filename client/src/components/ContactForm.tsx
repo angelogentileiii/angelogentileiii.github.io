@@ -89,10 +89,29 @@ const ContactForm: React.FC = () => {
 
 export const ContactFormRecaptcha = () => {
     return (
-        <GoogleReCaptchaProvider
-            reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
-        >
-            <ContactForm />
-        </GoogleReCaptchaProvider>
+        <div>
+            <GoogleReCaptchaProvider
+                reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+            >
+                <ContactForm />
+                <small className="text-[.6rem] text-gray-700">
+                    This site is protected by reCAPTCHA and the Google{" "}
+                    <a
+                        href="https://policies.google.com/privacy"
+                        className="text-amber-600"
+                    >
+                        Privacy Policy
+                    </a>{" "}
+                    and{" "}
+                    <a
+                        href="https://policies.google.com/terms"
+                        className="text-amber-600"
+                    >
+                        Terms of Service
+                    </a>{" "}
+                    apply
+                </small>
+            </GoogleReCaptchaProvider>
+        </div>
     );
 };

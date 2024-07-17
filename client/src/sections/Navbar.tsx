@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
 import { NavItem, DropdownMenu } from "../components/index.components";
 
 export const NavBar = () => {
     const [isOpen, setIsOpen] = useState(false);
+    const [smallWindow, setSmallWindow] = useState(window.innerWidth < 640);
+    const [scrollY, setScrollY] = useState(0);
+    const [activeSection, setActiveSection] = useState("");
+
+    const sections = ["About", "Experience", "Portfolio", "Contact", "Resume"];
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
     const handleLinkClick = () => {
@@ -12,53 +17,106 @@ export const NavBar = () => {
 
     useEffect(() => {
         const handleResize = () => {
+            setSmallWindow(window.innerWidth < 640);
             if (window.innerWidth >= 640 && isOpen) {
                 setIsOpen(false);
             }
         };
 
+        const handleScroll = () => {
+            setScrollY(window.scrollY);
+
+            let currentSection = "";
+            sections.forEach((section) => {
+                const element = document.getElementById(section.toLowerCase());
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    if (
+                        rect.top <= window.innerHeight / 2.75 &&
+                        rect.bottom >= window.innerHeight / 2.75
+                    ) {
+                        currentSection = section;
+                    }
+                }
+            });
+
+            setActiveSection(currentSection);
+        };
+
         window.addEventListener("resize", handleResize);
+        window.addEventListener("scroll", handleScroll);
 
         return () => {
             window.removeEventListener("resize", handleResize);
+            window.removeEventListener("scroll", handleScroll);
         };
     }, [isOpen]);
 
     return (
-        <header id="navBar" className=" py-3">
-            <nav className="max-w-7xl mx-auto flex justify-between items-center relative h-full">
-                <div className="hidden sm:flex sm:space-x-8 flex-grow justify-center">
-                    {["About", "Experience", "Portfolio", "Contact"].map(
-                        (item, index) => (
-                            <NavItem
-                                key={index}
-                                item={item}
-                                onClick={handleLinkClick}
-                            />
-                        )
-                    )}
-                    <NavItem
-                        item="Resume"
-                        onClick={handleLinkClick}
-                        staticItemProps={{
-                            href: "/assets/pdfs/AGIII-Technical-Resume.pdf",
-                            rel: "noopener noreferrer",
-                            target: "_blank",
-                        }}
-                    />
+        <header
+            id="navBar"
+            className={`fixed top-0 w-full py-3 z-50 transition-colors duration-500 ${
+                scrollY > 100 ? "bg-white" : "bg-slate-200"
+            }`}
+        >
+            <nav className="flex max-w-7xl mx-auto justify-between items-center h-full">
+                <div
+                    className={`transition-opacity duration-1000 ${
+                        smallWindow ? "opacity-0" : "opacity-100"
+                    } hidden sm:flex sm:space-x-16 flex-grow justify-center`}
+                >
+                    {sections.map((item, index) => {
+                        const textColor =
+                            activeSection === item
+                                ? "text-amber-600"
+                                : "text-gray-800";
+                        if (item !== "Resume") {
+                            return (
+                                <NavItem
+                                    key={index + item}
+                                    item={item}
+                                    className={textColor}
+                                    onClick={handleLinkClick}
+                                />
+                            );
+                        } else {
+                            return (
+                                <NavItem
+                                    key={index + item}
+                                    item={item}
+                                    onClick={handleLinkClick}
+                                    staticItemProps={{
+                                        href: "/assets/pdfs/AGIII-Technical-Resume.pdf",
+                                        rel: "noopener noreferrer",
+                                        target: "_blank",
+                                    }}
+                                    className={textColor}
+                                />
+                            );
+                        }
+                    })}
                 </div>
 
-                <div className="sm:hidden flex items-center ml-auto">
+                <div
+                    className={`transition-opacity duration-1000 ${
+                        smallWindow ? "opacity-100" : "opacity-0"
+                    } sm:hidden flex items-center ml-auto`}
+                >
                     <button onClick={toggleMenu} className="py-2 px-4">
-                        {isOpen ? (
-                            <FaTimes className="text-base" />
-                        ) : (
-                            <FaBars className="text-base" />
-                        )}
+                        <FaBars
+                            className={`text-base transition-transform duration-500 ${
+                                isOpen ? "rotate-90 text-amber-600" : ""
+                            }`}
+                        />
                     </button>
                 </div>
 
-                <DropdownMenu isOpen={isOpen} onClick={handleLinkClick} />
+                <DropdownMenu
+                    sections={sections}
+                    isOpen={isOpen}
+                    onClick={handleLinkClick}
+                    activeSection={activeSection}
+                />
             </nav>
         </header>
     );

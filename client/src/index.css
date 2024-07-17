@@ -12,3 +12,7 @@
     padding-left: clamp(0px, 10vw, 20vw); /* Adjust these values as needed */
     transition: padding-left 0.3s ease;
 }
+
+.grecaptcha-badge {
+    visibility: hidden !important;
+}
