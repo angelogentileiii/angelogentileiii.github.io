@@ -32,8 +32,8 @@ export const NavBar = () => {
                 if (element) {
                     const rect = element.getBoundingClientRect();
                     if (
-                        rect.top <= window.innerHeight / 2.75 &&
-                        rect.bottom >= window.innerHeight / 2.75
+                        rect.top <= window.innerHeight / 3.75 &&
+                        rect.bottom >= window.innerHeight / 3.75
                     ) {
                         currentSection = section;
                     }
@@ -63,9 +63,9 @@ export const NavBar = () => {
                 <div
                     className={`transition-opacity duration-1000 ${
                         smallWindow ? "opacity-0" : "opacity-100"
-                    } hidden sm:flex sm:space-x-16 flex-grow justify-center`}
+                    } hidden md:flex md:space-x-16 flex-grow justify-center`}
                 >
-                    {sections.map((item, index) => {
+                    {sections.map((item: string, index: number) => {
                         const textColor =
                             activeSection === item
                                 ? "text-amber-600"
@@ -100,7 +100,7 @@ export const NavBar = () => {
                 <div
                     className={`transition-opacity duration-1000 ${
                         smallWindow ? "opacity-100" : "opacity-0"
-                    } sm:hidden flex items-center ml-auto`}
+                    } md:hidden flex items-center ml-auto`}
                 >
                     <button onClick={toggleMenu} className="py-2 px-4">
                         <FaBars

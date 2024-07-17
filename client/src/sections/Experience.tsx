@@ -12,15 +12,13 @@ export const Experience = () => {
     const workData = data ? data.workData : [];
 
     return (
-        <section id="experience" className="section--container">
-            <div className="experience--section--content--box">
-                <div className="experience--section--content">
-                    <h1 className="experience--section--title">
-                        <span className="experience--section--title--color">
-                            Experience
-                        </span>{" "}
-                        <br />
-                    </h1>
+        <section
+            id="experience"
+            className="flex justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+        >
+            <div className="dynamic-padding pt-20 lg:pt-28">
+                <div className="">
+                    <h1 className="text-3xl font-bold">My Experience</h1>
                     {error && (
                         <div className="section--error">Error: {error}</div>
                     )}

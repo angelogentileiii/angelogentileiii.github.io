@@ -1,28 +1,26 @@
 import { techStack } from "../assets/tech-stack";
 
 export const TechStack: React.FC = () => {
-    const imageStyle = {
-        width: "75px",
-        height: "75px",
-        borderRadius: "10px",
-        margin: "10px",
-    };
+    const cleanLogoNames = techStack.map((logoPath) => {
+        const fileName = logoPath.substring(logoPath.lastIndexOf("/") + 1);
+        return fileName.replace(".png", "");
+    });
 
     return (
-        <div>
-            <div>
-                {techStack.map((item, itemIndex) => {
-                    return (
-                        <img
-                            className="tech--stack--item"
-                            style={imageStyle}
-                            key={itemIndex}
-                            src={item}
-                            alt="Tech Stack Item"
-                        />
-                    );
-                })}
-            </div>
+        <div
+            id="techstack"
+            className="flex flex-wrap justify-center items-center space-x-6 lg:space-x-16 my-4 max-w-full"
+        >
+            {techStack.map((item, index) => {
+                return (
+                    <img
+                        className="w-[4.75rem] h-[4.75rem] m-2 rounded-lg"
+                        key={index + item}
+                        src={item}
+                        alt={`Tech Stack Item ${cleanLogoNames[index]}`}
+                    />
+                );
+            })}
         </div>
     );
 };

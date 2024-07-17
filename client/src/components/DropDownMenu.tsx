@@ -13,7 +13,7 @@ export const DropdownMenu: React.FC<DropDownProps> = ({
         }`}
     >
         <div className="flex flex-col space-y-2">
-            {sections.map((item, index) => {
+            {sections.map((item: string, index: number) => {
                 const textColor =
                     activeSection === item ? "text-amber-600" : "text-gray-800";
                 if (item !== "Resume") {

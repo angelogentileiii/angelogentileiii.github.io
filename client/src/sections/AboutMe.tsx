@@ -2,16 +2,23 @@ import { TechStack } from "../components/index.components";
 
 export const AboutMe: React.FC = () => {
     return (
-        <section id="about" className="section--container">
-            <div className="about--section--content--box">
-                <div className="about--section--content">
-                    <h1 className="about--section--title">
-                        {/* <span className="about--section--title--color">
-                            Get to Know Me
-                        </span>{" "}
-                        <br /> */}
-                    </h1>
-                    <p className="about--section--description">
+        <section
+            id="about"
+            className="block justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+        >
+            <div className="flex flex-col lg:flex-row items-center w-full lg:mb-36 bg-slate-200 pt-20 lg:pt-44 pb-4 px-4">
+                <div
+                    id="profileimage"
+                    className="flex justify-center mb-16 mx-auto lg:mr-16 lg:mb-0 lg:w-2/5"
+                >
+                    <img
+                        src="/assets/img/CrewPortalLogo.png"
+                        alt="Profile image of Angelo Gentile III"
+                        className="w-full max-w-sm h-auto rounded-lg"
+                    />
+                </div>
+                <div className="text-start mx-auto lg:mr-16 lg:w-3/5">
+                    <p className="text-base mb-8">
                         As a full-stack software engineer and former digital
                         imaging technician, I have spent over 9 years thriving
                         in the dynamic, high-pressure environment of the
@@ -31,13 +38,15 @@ export const AboutMe: React.FC = () => {
                         building strong connections and delivering exceptional
                         results.
                     </p>
+                    <a
+                        className="mt-4 bg-amber-600 hover:bg-opacity-80 text-white py-2 px-4 rounded-md"
+                        href="#contact"
+                    >
+                        Let's Connect!
+                    </a>
                 </div>
-                <div className="about--section-tech">
-                    <TechStack />
-                </div>
-                <button className="btn btn-primary">Get in Touch</button>
             </div>
-            <div className="about--section--image"></div>
+            <TechStack />
         </section>
     );
 };

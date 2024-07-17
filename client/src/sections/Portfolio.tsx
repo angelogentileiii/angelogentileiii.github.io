@@ -10,8 +10,11 @@ export const Portfolio = () => {
     const portfolioData = data ? data.portfolioData : [];
 
     return (
-        <section id="portfolio" className="section--container">
-            <div className="portfolio--section--content--box">
+        <section
+            id="portfolio"
+            className="flex justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+        >
+            <div className="pt-20 lg:pt-28">
                 <div className="portfolio--section--content">
                     <h1 className="portfolio--section--title">
                         <span className="portfolio--section--title--color">

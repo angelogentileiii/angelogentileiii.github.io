@@ -7,8 +7,11 @@ export const Contact: React.FC = () => {
     // If contact preference is a phone number, ensure that a valid phone number is entered
 
     return (
-        <section id="contact" className="section--container">
-            <div className="contact--section--content--box">
+        <section
+            id="contact"
+            className="flex justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+        >
+            <div className="pt-20 lg:pt-28">
                 <div className="contact--section--content">
                     <h1 className="contact--section--title">
                         <span className="contact--section--title--color">

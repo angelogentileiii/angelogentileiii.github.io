@@ -2,14 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-    body {
-        @apply font-sans; /* Apply the Tailwind font-sans class */
-    }
-}
-
 .dynamic-padding {
-    padding-left: clamp(0px, 10vw, 20vw); /* Adjust these values as needed */
+    padding-left: clamp(0px, 10vw, 20vw);
     transition: padding-left 0.3s ease;
 }
 

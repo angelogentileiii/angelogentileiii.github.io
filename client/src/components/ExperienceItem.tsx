@@ -3,34 +3,34 @@ import { ExperienceData, Experience } from "../../types/index.types";
 
 export const ExperienceItem: React.FC<ExperienceData> = ({ workData }) => {
     return (
-        <div>
-            <div>
-                {workData.map((experience: Experience, expIndex: number) => {
-                    const { workDates, workDetails, position, company } =
-                        experience;
-                    return (
-                        <div className="work--event" key={expIndex}>
-                            <p className="work--event--dates">
-                                {Array.isArray(workDates)
-                                    ? workDates[0] + " - " + workDates[1]
-                                    : workDates}
-                            </p>
-                            <h3 className="work--event-position">{position}</h3>
-                            <p className="work--event--company">{company}</p>
+        <div className="hello">
+            {workData.map((experience: Experience, index: number) => {
+                const { workDates, workDetails, position, company } =
+                    experience;
+                return (
+                    <article
+                        className="m-8"
+                        key={index + experience.company + experience.position}
+                    >
+                        <h3 className="text-xl font-bold">{position}</h3>
+                        <p className="text-lg text-amber-600">{company}</p>
+                        <p className="text-sm italic">
+                            {Array.isArray(workDates)
+                                ? workDates[0] + " - " + workDates[1]
+                                : workDates}
+                        </p>
+                        <ul className="leading-relaxed text-sm">
                             {workDetails.map(
                                 (detail: string, detailIndex: number) => (
-                                    <p
-                                        className="work--event--details"
-                                        key={detailIndex}
-                                    >
+                                    <li className="p-2" key={detailIndex}>
                                         {"- " + detail}
-                                    </p>
+                                    </li>
                                 )
                             )}
-                        </div>
-                    );
-                })}
-            </div>
+                        </ul>
+                    </article>
+                );
+            })}
         </div>
     );
 };
