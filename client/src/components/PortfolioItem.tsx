@@ -6,38 +6,52 @@ export const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
         window.open(url, "_blank", "noopener,noreferrer");
     };
 
-    const imageStyle = {
-        width: "150px",
-        height: "150px",
-        borderRadius: "10px",
-        borderColor: "black",
-        borderStyle: "solid",
-        margin: "10px",
-    };
-
     return (
-        <div>
-            <div>
-                {portfolioData.map((project: Project, projIndex: number) => {
-                    const { title, description, image, url, alt } = project;
+        <div className="flex flex-wrap gap-8 sm:grid-cols-2 md:grid-cols-3">
+            {portfolioData.map((project: Project, projIndex: number) => {
+                const { title, description, image, url, githubUrl, alt } =
+                    project;
 
-                    return (
-                        <div className="project--item" key={projIndex}>
-                            <img
-                                className="project--image"
-                                src={image}
-                                alt={alt}
-                                onClick={() => onImageClick(url)}
-                                style={imageStyle}
-                            />
-                            <h3 className="project--title">{title}</h3>
-                            <p className="project--description">
-                                {description}
-                            </p>
+                return (
+                    <article
+                        className="flex flex-col flex-grow mt-6 text-gray-700 bg-white shadow-md bg-clip-border rounded-xl max-w-md"
+                        key={projIndex}
+                    >
+                        <img
+                            className="relative h-48 w-48 object-cover mx-auto -mt-6 overflow-hidden shadow-lg rounded-xl bg-blue-gray-500 hover:"
+                            src={image}
+                            alt={alt}
+                            onClick={() => onImageClick(url)}
+                        />
+                        <div className="p-4 flex flex-col justify-center flex-grow">
+                            <div>
+                                <h5 className="block mb-2 text-xl font-semibold text-blue-gray-900">
+                                    {title}
+                                </h5>
+                                <p className="block mb-2 text-base font-light text-gray-700">
+                                    {description}
+                                </p>
+                            </div>
+                            <div className="flex flex-wrap justify-center m-2">
+                                <a
+                                    className="bg-amber-600 hover:bg-opacity-80 text-white my-2 mx-2 sm:mx-3 py-2 px-4 rounded-md whitespace-nowrap text-center"
+                                    href={url}
+                                    target="_blank"
+                                >
+                                    View Demo
+                                </a>
+                                <a
+                                    className="bg-amber-600 hover:bg-opacity-80 text-white my-2 mx-2 sm:mx-3 py-2 px-4 rounded-md whitespace-nowrap text-center"
+                                    href={githubUrl}
+                                    target="_blank"
+                                >
+                                    Github Repository
+                                </a>
+                            </div>
                         </div>
-                    );
-                })}
-            </div>
+                    </article>
+                );
+            })}
         </div>
     );
 };

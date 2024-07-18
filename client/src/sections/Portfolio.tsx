@@ -12,7 +12,7 @@ export const Portfolio = () => {
     return (
         <section
             id="portfolio"
-            className="flex justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+            className="flex justify-start items-center min-h-screen h-auto bg-slate-200 p-4 min-w-[320px]"
         >
             <div className="pt-20 lg:pt-28">
                 <div className="portfolio--section--content">

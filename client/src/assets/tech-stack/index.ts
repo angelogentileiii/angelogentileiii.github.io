@@ -12,12 +12,12 @@ import postgreLogo from "./postgre-logo.png";
 export const techStack = [
     jsLogo,
     tsLogo,
-    pythonLogo,
     reactLogo,
+    pythonLogo,
     flaskLogo,
-    htmlLogo,
-    cssLogo,
     awsLogo,
     mysqlLogo,
     postgreLogo,
+    htmlLogo,
+    cssLogo,
 ];

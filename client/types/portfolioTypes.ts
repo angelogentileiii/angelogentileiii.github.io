@@ -4,6 +4,7 @@ export interface Project {
     image: string;
     alt: string;
     url: string;
+    githubUrl: string;
 }
 
 export interface PortfolioData {
