@@ -6,7 +6,8 @@ import {
     UseFormSetValue,
 } from "react-hook-form";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps
+    extends InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement> {
     name: string;
     register: UseFormRegister<FieldValues>;
     rules?: {};

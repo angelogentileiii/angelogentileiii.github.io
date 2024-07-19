@@ -6,7 +6,10 @@ export const AboutMe: React.FC = () => {
             id="about"
             className="block justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
         >
-            <div className="flex flex-col lg:flex-row items-center w-full lg:mb-36 bg-slate-200 pt-20 lg:pt-44 pb-4 px-4">
+            <div className="text-3xl font-bold pt-16 lg:pt-28 dynamic-padding">
+                <h3>&mdash; Hi, it's a pleasure to meet you!</h3>
+            </div>
+            <div className="flex flex-col lg:flex-row items-center w-full lg:mb-36 bg-slate-200 pt-16 pb-4 px-4">
                 <div
                     id="profileimage"
                     className="flex justify-center mb-16 mx-auto lg:mr-16 lg:mb-0 lg:w-2/5"
@@ -19,7 +22,9 @@ export const AboutMe: React.FC = () => {
                 </div>
                 <div className="text-start mx-auto lg:mr-16 lg:w-3/5">
                     <p className="text-base mb-8">
-                        As a full-stack software engineer and former digital
+                        My name is{" "}
+                        <span className="text-amber-600">Angelo Gentile</span>{" "}
+                        and as a full-stack software engineer and former digital
                         imaging technician, I have spent over 9 years thriving
                         in the dynamic, high-pressure environment of the
                         multi-billion dollar film and television industry. This

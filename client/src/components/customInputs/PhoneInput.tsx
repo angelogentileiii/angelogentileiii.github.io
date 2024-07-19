@@ -1,4 +1,4 @@
-import { PhoneInputProps } from "../../types/index.types";
+import { PhoneInputProps } from "../../../types/index.types";
 
 export const PhoneInput: React.FC<PhoneInputProps> = ({
     name,
@@ -11,6 +11,7 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({
 }) => {
     const errorDetails = error && error[name];
     const errorMessage = errorDetails?.message;
+    const inputClasses = error?.[name] ? `input-error ${name}` : name;
 
     const handlePhoneChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         let value = event.target.value;
@@ -55,9 +56,9 @@ export const PhoneInput: React.FC<PhoneInputProps> = ({
     };
 
     return (
-        <div className="input--block">
+        <div className="w-full mb-4 rounded-md">
             <input
-                className={error?.[name] ? `input-error ${name}` : name}
+                className={`w-full px-4 py-2 bg-slate-100 shadow-inner border border-transparent rounded-md focus:outline-none focus:ring-2 focus:ring-amber-600 ${inputClasses}`}
                 placeholder={placeholder}
                 {...register(name, rules)}
                 onChange={handlePhoneChange}

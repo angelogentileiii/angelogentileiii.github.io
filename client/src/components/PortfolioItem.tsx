@@ -7,7 +7,7 @@ export const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
     };
 
     return (
-        <div className="flex flex-wrap gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="flex flex-wrap gap-8 sm:grid-cols-2 md:grid-cols-3 pt-16">
             {portfolioData.map((project: Project, projIndex: number) => {
                 const { title, description, image, url, githubUrl, alt } =
                     project;
@@ -18,7 +18,7 @@ export const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
                         key={projIndex}
                     >
                         <img
-                            className="relative h-48 w-48 object-cover mx-auto -mt-6 overflow-hidden shadow-lg rounded-xl bg-blue-gray-500 hover:"
+                            className="relative h-48 w-48 object-cover mx-auto -mt-6 overflow-hidden shadow-lg rounded-xl bg-blue-gray-800 transform transition-transform hover:scale-105 hover:opacity-85"
                             src={image}
                             alt={alt}
                             onClick={() => onImageClick(url)}
@@ -36,6 +36,7 @@ export const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
                                 <a
                                     className="bg-amber-600 hover:bg-opacity-80 text-white my-2 mx-2 sm:mx-3 py-2 px-4 rounded-md whitespace-nowrap text-center"
                                     href={url}
+                                    rel="noopener noreferrer"
                                     target="_blank"
                                 >
                                     View Demo
@@ -43,6 +44,7 @@ export const PortfolioItem: React.FC<PortfolioData> = ({ portfolioData }) => {
                                 <a
                                     className="bg-amber-600 hover:bg-opacity-80 text-white my-2 mx-2 sm:mx-3 py-2 px-4 rounded-md whitespace-nowrap text-center"
                                     href={githubUrl}
+                                    rel="noopener noreferrer"
                                     target="_blank"
                                 >
                                     Github Repository

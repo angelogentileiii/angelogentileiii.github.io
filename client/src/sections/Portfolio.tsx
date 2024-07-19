@@ -12,20 +12,18 @@ export const Portfolio = () => {
     return (
         <section
             id="portfolio"
-            className="flex justify-start items-center min-h-screen h-auto bg-slate-200 p-4 min-w-[320px]"
+            className="flex flex-col items-center mx-auto w-screen min-h-screen h-auto bg-slate-200 p-4 min-w-[320px]"
         >
-            <div className="pt-20 lg:pt-28">
-                <div className="portfolio--section--content">
-                    <h1 className="portfolio--section--title">
-                        <span className="portfolio--section--title--color">
-                            Portfolio
-                        </span>{" "}
-                        <br />
-                    </h1>
-                    {error && (
-                        <div className="section--error">Error: {error}</div>
-                    )}
-                    {loading && <div>Loading...</div>}
+            <div className="dynamic-padding pt-20 lg:pt-28 w-screen">
+                <h1 className="text-3xl font-bold mb-2">
+                    &mdash; My Portfolio
+                    <br />
+                </h1>
+            </div>
+            <div>
+                {error && <div className="section--error">Error: {error}</div>}
+                {loading && <div>Loading...</div>}
+                <div className="flex flex-wrap justify-center">
                     {portfolioData.length > 0 && (
                         <PortfolioItem portfolioData={portfolioData} />
                     )}

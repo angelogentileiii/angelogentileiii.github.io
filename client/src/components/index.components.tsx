@@ -4,5 +4,6 @@ export * from "./ExperienceItem";
 export * from "./PortfolioItem";
 export * from "./TechStack";
 export * from "./ContactForm";
-export * from "./Input";
-export * from "./PhoneInput";
+export * from "./customInputs/Input";
+export * from "./customInputs/PhoneInput";
+export * from "./customInputs/TextArea";

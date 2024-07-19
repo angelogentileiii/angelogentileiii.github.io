@@ -1,5 +1,9 @@
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
-import { Input, PhoneInput as CustomPhoneInput } from "./index.components";
+import {
+    Input,
+    PhoneInput as CustomPhoneInput,
+    TextArea,
+} from "./index.components";
 import contactInputFields from "../configs/formConfigs/contactInputFields";
 import {
     GoogleReCaptchaProvider,
@@ -48,23 +52,35 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <div className="contact--form--container">
-            <form className="contact--form" onSubmit={handleSubmit(onSubmit)}>
+        <div className="mx-auto bg-white rounded-lg shadow-md p-4 w-4/5">
+            <form
+                className="placeholder:text-start flex flex-col items-center"
+                onSubmit={handleSubmit(onSubmit)}
+            >
                 {contactInputFields.map((input, index: number) => {
                     const { name, placeholder, rules } = input;
                     if (name === "phone") {
                         return (
-                            <div key={index + name}>
-                                <CustomPhoneInput
-                                    key={index + name}
-                                    name={name}
-                                    placeholder={placeholder}
-                                    register={control.register}
-                                    setValue={setValue}
-                                    rules={rules}
-                                    error={errors}
-                                />
-                            </div>
+                            <CustomPhoneInput
+                                key={index + name}
+                                name={name}
+                                placeholder={placeholder}
+                                register={control.register}
+                                setValue={setValue}
+                                rules={rules}
+                                error={errors}
+                            />
+                        );
+                    } else if (name === "message") {
+                        return (
+                            <TextArea
+                                key={index + name}
+                                name={name}
+                                placeholder={placeholder}
+                                register={control.register}
+                                rules={rules}
+                                error={errors}
+                            />
                         );
                     }
                     return (
@@ -79,7 +95,10 @@ const ContactForm: React.FC = () => {
                     );
                 })}
                 <br />
-                <button className="contact--form--button" type="submit">
+                <button
+                    className="bg-amber-600 hover:bg-opacity-80 text-white my-2 mx-2 sm:mx-3 py-2 px-4 rounded-md whitespace-nowrap text-center"
+                    type="submit"
+                >
                     Submit
                 </button>
             </form>
