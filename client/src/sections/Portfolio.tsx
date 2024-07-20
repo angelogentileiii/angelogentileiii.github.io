@@ -1,8 +1,8 @@
 import { PortfolioItem } from "../components/index.components";
 import useFetchData from "../hooks/useFetchData";
-import { PortfolioData } from "../../types/index.types";
+import { PortfolioData, Project } from "../../types/index.types";
 
-export const Portfolio = () => {
+export const Portfolio: React.FC = () => {
     const [data, loading, error] = useFetchData<PortfolioData>(
         "/data/portfolioData.json"
     );
@@ -12,21 +12,18 @@ export const Portfolio = () => {
     return (
         <section
             id="portfolio"
-            className="flex flex-col items-center mx-auto w-screen min-h-screen h-auto bg-slate-200 p-4 min-w-[320px]"
+            className="block mx-auto justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
         >
-            <div className="dynamic-padding pt-20 lg:pt-28 w-screen">
-                <h1 className="text-3xl font-bold mb-2">
-                    &mdash; My Portfolio
-                    <br />
-                </h1>
+            <div className="text-3xl font-bold pt-16 lg:pt-28 dynamic-padding">
+                <h3>&mdash; My Portfolio</h3>
             </div>
-            <div>
+            <div className="w-full mx-auto max-w-screen">
                 {error && <div className="section--error">Error: {error}</div>}
                 {loading && <div>Loading...</div>}
-                <div className="flex flex-wrap justify-center">
-                    {portfolioData.length > 0 && (
-                        <PortfolioItem portfolioData={portfolioData} />
-                    )}
+                <div className="flex flex-wrap mx-auto gap-6 justify-center">
+                    {portfolioData.map((item: Project, index: number) => (
+                        <PortfolioItem key={index + item.title} {...item} />
+                    ))}
                 </div>
             </div>
         </section>

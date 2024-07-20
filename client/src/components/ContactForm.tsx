@@ -52,8 +52,9 @@ const ContactForm: React.FC = () => {
     };
 
     return (
-        <div className="mx-auto bg-white rounded-lg shadow-md p-4 w-4/5">
+        <div className="mx-auto bg-white rounded-lg shadow-md p-4 w-full">
             <form
+                autoComplete="off"
                 className="placeholder:text-start flex flex-col items-center"
                 onSubmit={handleSubmit(onSubmit)}
             >
@@ -113,23 +114,6 @@ export const ContactFormRecaptcha = () => {
                 reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
             >
                 <ContactForm />
-                <small className="text-[.6rem] text-gray-700">
-                    This site is protected by reCAPTCHA and the Google{" "}
-                    <a
-                        href="https://policies.google.com/privacy"
-                        className="text-amber-600"
-                    >
-                        Privacy Policy
-                    </a>{" "}
-                    and{" "}
-                    <a
-                        href="https://policies.google.com/terms"
-                        className="text-amber-600"
-                    >
-                        Terms of Service
-                    </a>{" "}
-                    apply
-                </small>
             </GoogleReCaptchaProvider>
         </div>
     );

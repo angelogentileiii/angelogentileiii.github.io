@@ -1,20 +1,20 @@
 {
     "name": "portofolio-site",
     "version": "1.0.0",
-    "description": "",
+    "description": "Portfolio site using Vite, TailwindCSS, and Node.js with TypeScript server.",
     "main": "index.js",
     "scripts": {
         "frontend": "vite --config client/vite.config.js",
+        "tailwind": "cd client && npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
         "backend": "nodemon server/server.ts",
-        "dev": "concurrently \"npm run frontend\" \"npm run backend\""
+        "dev": "concurrently \"npm run frontend\" \"npm run tailwind\" \"npm run backend\""
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "@types/cors": "^2.8.17",
-        "concurrently": "^8.2.2",
-        "https": "^1.0.0"
+        "concurrently": "^8.2.2"
     },
     "dependencies": {
         "nodemon": "^3.1.4",
