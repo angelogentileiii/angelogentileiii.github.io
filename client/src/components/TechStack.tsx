@@ -1,4 +1,4 @@
-import { techStack } from "../assets/tech-stack";
+import { techStack } from "../assets/index";
 
 export const TechStack: React.FC = () => {
     const cleanLogoNames = techStack.map((logoPath) => {

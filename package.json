@@ -6,11 +6,11 @@
     "main": "index.js",
     "scripts": {
         "frontendDev": "vite --config client/vite.config.js",
-        "backendDev": "cd server && npm run dev",
-        "tailwind": "cd client && npm run tailwind",
+        "backendDev": "npm run dev --prefix server",
+        "tailwind": "npm run tailwind --prefix client",
         "dev": "concurrently \"npm run frontendDev\" \"npm run tailwind\" \"npm run backendDev\"",
-        "build:frontend": "cd client && npm run build",
-        "build:backend": "cd server && npm run build",
+        "build:frontend": "npm run build --prefix client",
+        "build:backend": "npm run build --prefix server",
         "start:backend": "node server/dist/server.js"
     },
     "keywords": [],

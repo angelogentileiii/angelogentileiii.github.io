@@ -5,7 +5,8 @@
     "description": "Back-end Express/TypeScript application.",
     "main": "src/server.ts",
     "scripts": {
-        "start": "npm run build && node dist/server.js",
+        "prestart": "npm run build",
+        "start": "node dist/server.js",
         "dev": "tsx src/server.ts",
         "build": "tsc"
     },
