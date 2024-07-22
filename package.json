@@ -11,7 +11,8 @@
         "dev": "concurrently \"npm run frontendDev\" \"npm run tailwind\" \"npm run backendDev\"",
         "build:frontend": "npm run build --prefix client",
         "build:backend": "npm run build --prefix server",
-        "start:backend": "node server/dist/server.js"
+        "build": "npm run build:backend && npm run build:fronted",
+        "start": "node server/dist/server.js"
     },
     "keywords": [],
     "author": "",
