@@ -32,14 +32,12 @@ jobs:
 
             - name: Check Build Artifacts
               run: ls -la server/dist
-              working-directory: server
 
             - name: Frontend - Build
               run: npm run build:frontend # Build frontend app
 
             - name: Check Build Artifacts
               run: ls -la client/dist
-              working-directory: client
 
             - name: Upload Build Artifacts
               uses: actions/upload-artifact@v3
