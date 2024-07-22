@@ -1,12 +1,19 @@
 {
     "compilerOptions": {
-        "target": "ES6",
-        "module": "commonjs",
+        "target": "ESNext",
+        "module": "ESNext",
+        "lib": ["esnext"],
         "rootDir": "./src",
-        "outDir": "./.dist",
+        "outDir": "./dist",
+        "skipLibCheck": true,
         "esModuleInterop": true,
-        "strict": true
+        "allowSyntheticDefaultImports": true,
+        "strict": true,
+        "forceConsistentCasingInFileNames": true,
+        "noFallthroughCasesInSwitch": true,
+        "moduleResolution": "node",
+        "isolatedModules": true
     },
-    "include": ["src"],
+    "include": ["src/**/*"],
     "exclude": ["node_modules"]
 }

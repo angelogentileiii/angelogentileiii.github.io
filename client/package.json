@@ -24,7 +24,9 @@
     },
     "scripts": {
         "start": "vite",
+        "tailwind": "npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
         "build": "tsc && vite build",
+        "postinstall": "npm run build",
         "serve": "vite preview",
         "test": "vitest",
         "test:coverage": "vitest run --coverage --watch=false"
