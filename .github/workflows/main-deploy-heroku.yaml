@@ -15,9 +15,9 @@ jobs:
               uses: actions/checkout@v3
 
             - name: Set up Node.js
-              uses: actions/setup-node@v2
+              uses: actions/setup-node@v4
               with:
-                  node-version: "14"
+                  node-version: "latest"
 
             - name: Backend - Install Dependencies
               run: npm install
@@ -46,6 +46,14 @@ jobs:
         needs: build
 
         steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: Set up Git User Details
+              run: |
+                  git config --global user.name "angelogentileiii"
+                  git config --global user.email ${{secrets.CONTACT_FORM_RECIPIENT}}
+
             - name: Download Build Artifacts
               uses: actions/download-artifact@v3
               with:
@@ -57,7 +65,7 @@ jobs:
                   branch: deploy-testing
                   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
                   heroku_app_name: "ajgiii-portfolio-site"
-                  heroku_email: ${{ secrets.CONTACT_FORM_RECIPIENT }}
+                  heroku_email: ${{ secrets.HEROKU_EMAIL }}
               env: # Environment variables with HD prefix for Heroku
                   HD_VITE_AWS_REGION: ${{ secrets.AWS_REGION }}
                   HD_VITE_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
