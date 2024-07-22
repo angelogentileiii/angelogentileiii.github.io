@@ -4,7 +4,7 @@ on:
     push:
         branches:
             - main # Trigger deployment on pushes to main branch
-            -deploy-testing
+            - deploy-testing
     workflow_dispatch: # Trigger manual deployments
 
 jobs:
