@@ -14,18 +14,18 @@ jobs:
             - name: Checkout Repository
               uses: actions/checkout@v3
 
-            - name: Set up Node.js
-              uses: actions/setup-node@v4
-              with:
-                  node-version: "latest"
+            # - name: Set up Node.js
+            #   uses: actions/setup-node@v4
+            #   with:
+            #       node-version: "latest"
 
-            - name: Backend - Install Dependencies
-              run: npm install
-              working-directory: server # Install backend dependencies
+            # - name: Backend - Install Dependencies
+            #   run: npm install
+            #   working-directory: server # Install backend dependencies
 
-            - name: Frontend - Install Dependencies
-              run: npm install
-              working-directory: client # Install frontend dependencies
+            # - name: Frontend - Install Dependencies
+            #   run: npm install
+            #   working-directory: client # Install frontend dependencies
 
             # - name: Backend - Build
             #   run: npm run build:backend # Build backend server
