@@ -5,6 +5,9 @@ import react from "@vitejs/plugin-react-swc";
 export default defineConfig({
     base: "/",
     plugins: [react()],
+    optimizeDeps: {
+        include: ["react/jsx-dev-runtime"],
+    },
     css: {
         postcss: "client/postcss.config.js",
     },

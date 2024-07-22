@@ -3,7 +3,7 @@ name: Deploy Portfolio Site to Heroku
 on:
     push:
         branches:
-            - main # Trigger deployment on pushes to main branch
+            - deploy-testing # Trigger deployment on pushes to main branch
     workflow_dispatch: # Trigger manual deployments
 
 jobs:
@@ -33,10 +33,23 @@ jobs:
             - name: Frontend - Build
               run: npm run build:frontend # Build frontend app
 
+            - name: Upload Build Artifacts
+              uses: actions/upload-artifact@v3
+              with:
+                  name: build-artifacts
+                  path: |
+                      client/dist
+                      server/dist
+
     deploy:
         runs-on: ubuntu-latest
 
         steps:
+            - name: Download Build Artifacts
+              uses: actions/download-artifact@v3
+              with:
+                  name: build-artifacts
+
             - name: Deploy to Heroku
               uses: akhileshns/heroku-deploy@v3.13.15 # Heroku deployment library
               with:

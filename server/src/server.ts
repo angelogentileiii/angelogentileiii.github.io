@@ -2,9 +2,9 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 
-import emailRoutes from "./src/routes/emailRoutes";
+import emailRoutes from "./routes/emailRoutes";
 
-import { verifyRecaptchaToken } from "./src/middlewares/index.middlewares";
+import { verifyRecaptchaToken } from "./middlewares/index.middlewares";
 
 dotenv.config();
 

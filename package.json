@@ -6,10 +6,10 @@
     "main": "index.js",
     "scripts": {
         "frontendDev": "vite --config client/vite.config.js",
-        "backendDev": "nodemon server/server.ts",
-        "tailwind": "cd client && npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
+        "backendDev": "cd server && npm run dev",
+        "tailwind": "cd client && npm run tailwind",
         "dev": "concurrently \"npm run frontendDev\" \"npm run tailwind\" \"npm run backendDev\"",
-        "build:frontend": "cd client && npm run build --outDir .dist",
+        "build:frontend": "cd client && npm run build",
         "build:backend": "cd server && npm run build",
         "start:backend": "cd server && node dist/server.js"
     },
@@ -19,10 +19,9 @@
     "devDependencies": {
         "@types/cors": "^2.8.17",
         "concurrently": "^8.2.2",
-        "nodemon": "^3.1.4"
+        "typescript": "^5.5.3"
     },
     "dependencies": {
-        "typescript": "^5.5.3",
         "vite": "^5.3.3"
     }
 }
