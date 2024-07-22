@@ -3,7 +3,8 @@ name: Deploy Portfolio Site to Heroku
 on:
     push:
         branches:
-            - deploy-testing # Trigger deployment on pushes to main branch
+            - main # Trigger deployment on pushes to main branch
+            -deploy-testing
     workflow_dispatch: # Trigger manual deployments
 
 jobs:
