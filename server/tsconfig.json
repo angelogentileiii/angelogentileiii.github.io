@@ -14,6 +14,6 @@
         "moduleResolution": "node",
         "isolatedModules": true
     },
-    "include": ["src/server.ts"],
+    "include": ["src/**/*"],
     "exclude": ["node_modules"]
 }

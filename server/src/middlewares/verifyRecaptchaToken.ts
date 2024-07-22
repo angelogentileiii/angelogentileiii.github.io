@@ -3,7 +3,7 @@ import {
     EmailRequest,
     EmailSESPayload,
     GoogleRecaptchaResponse,
-} from "../types/index.types";
+} from "../types/index.types.js";
 import { Request, Response, NextFunction } from "express";
 
 export const verifyRecaptchaToken = async (
