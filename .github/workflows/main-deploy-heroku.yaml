@@ -27,11 +27,11 @@ jobs:
               run: npm install
               working-directory: client # Install frontend dependencies
 
-            - name: Backend - Build
-              run: npm run build:backend # Build backend server
+            # - name: Backend - Build
+            #   run: npm run build:backend # Build backend server
 
-            - name: Frontend - Build
-              run: npm run build:frontend # Build frontend app
+            # - name: Frontend - Build
+            #   run: npm run build:frontend # Build frontend app
 
             - name: Deploy to Heroku
               uses: akhileshns/heroku-deploy@v3.13.15 # Heroku deployment library
