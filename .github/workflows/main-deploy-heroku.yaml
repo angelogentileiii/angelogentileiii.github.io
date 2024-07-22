@@ -1,0 +1,32 @@
+name: Deploy Portfolio Site to Heroku
+
+on:
+    push:
+        branches:
+            - main # Trigger deployment on pushes to main branch
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v3
+
+            - name: Deploy to Heroku
+              uses: akhileshns/heroku-deploy@v3.13.15
+              with:
+                  branch: "main"
+                  heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                  heroku_app_name: "ajgiii-portfolio-site"
+                  heroku_email: ${{ secrets.CONTACT_FORM_RECIPIENT }}
+              env:
+                  VITE_AWS_REGION: ${{ secrets.AWS_REGION }}
+                  VITE_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+                  VITE_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  VITE_CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
+                  VITE_CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}
+                  VITE_RECAPTCHA_URL: ${{ secrets.GOOGLE_RECAPTCHA_URL }}
+                  VITE_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+                  VITE_RECAPTCHA_SECRET_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SECRET_KEY }}

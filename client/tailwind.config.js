@@ -10,6 +10,11 @@ export default {
         fontFamily: {
             sans: ["Montserrat", "Arial", "sans-serif"],
         },
+        extend: {
+            backgroundImage: {
+                "hero-image": 'url("/assets/img/Hero-Image.jpeg")',
+            },
+        },
     },
     plugins: [],
 };

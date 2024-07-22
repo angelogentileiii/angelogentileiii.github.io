@@ -4,20 +4,23 @@
     "description": "Portfolio site using Vite, TailwindCSS, and Node.js with TypeScript server.",
     "main": "index.js",
     "scripts": {
-        "frontend": "vite --config client/vite.config.js",
+        "frontend": "cd client && vite build --outDir ../public/client",
+        "frontendDev": "vite --config client/vite.config.js",
         "tailwind": "cd client && npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
-        "backend": "nodemon server/server.ts",
-        "dev": "concurrently \"npm run frontend\" \"npm run tailwind\" \"npm run backend\""
+        "backend": "cd server && node server.ts",
+        "backendDev": "nodemon server/server.ts",
+        "dev": "concurrently \"npm run frontendDev\" \"npm run tailwind\" \"npm run backendDev\"",
+        "start": "npm run frontend & npm run tailwind & npm run backend"
     },
     "keywords": [],
     "author": "",
     "license": "ISC",
     "devDependencies": {
         "@types/cors": "^2.8.17",
-        "concurrently": "^8.2.2"
+        "concurrently": "^8.2.2",
+        "nodemon": "^3.1.4"
     },
     "dependencies": {
-        "nodemon": "^3.1.4",
         "vite": "^5.3.3"
     }
 }

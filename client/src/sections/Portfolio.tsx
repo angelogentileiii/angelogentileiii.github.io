@@ -12,7 +12,7 @@ export const Portfolio: React.FC = () => {
     return (
         <section
             id="portfolio"
-            className="block mx-auto justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+            className="block mx-auto justify-start items-center min-h-screen h-auto min-w-[320px] p-4"
         >
             <div className="text-3xl font-bold pt-16 lg:pt-28 dynamic-padding">
                 <h3>&mdash; My Portfolio</h3>

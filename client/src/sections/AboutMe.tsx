@@ -4,23 +4,23 @@ export const AboutMe: React.FC = () => {
     return (
         <section
             id="about"
-            className="block justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+            className="block justify-start items-center min-h-screen h-auto min-w-[320px] p-4"
         >
             <div className="text-3xl font-bold pt-16 lg:pt-28 dynamic-padding">
                 <h3>&mdash; Hi, it's a pleasure to meet you!</h3>
             </div>
-            <div className="flex flex-col lg:flex-row items-center w-full lg:mb-36 bg-slate-200 pt-16 pb-4 px-4">
+            <div className="flex flex-col lg:flex-row items-center w-full lg:mb-20 pt-16 pb-4 px-4">
                 <div
                     id="profileimage"
-                    className="flex justify-center mb-16 mx-auto lg:mr-16 lg:mb-0 lg:w-2/5"
+                    className="flex justify-center items-center mb-16 mx-auto lg:mr-16 lg:mb-0 lg:w-2/5 h-auto"
                 >
                     <img
-                        src="/assets/img/CrewPortalLogo.png"
+                        src="/assets/img/Angelo-Profile.png"
                         alt="Profile image of Angelo Gentile III"
-                        className="w-full max-w-sm h-auto rounded-lg"
+                        className="flex w-full max-h-[500px] lg:h-full lg:aspect-auto lg:max-h-full rounded-lg"
                     />
                 </div>
-                <div className="text-start mx-auto lg:mr-16 lg:w-3/5">
+                <div className="pl-4 text-start mx-auto lg:w-3/5 lg:text-left">
                     <p className="text-base mb-8">
                         My name is{" "}
                         <span className="text-amber-600">Angelo Gentile</span>{" "}

@@ -56,7 +56,7 @@ export const NavBar = () => {
         <header
             id="navBar"
             className={`fixed top-0 w-full py-3 z-50 transition-colors duration-500 ${
-                scrollY > 100 ? "bg-white" : "bg-slate-200"
+                scrollY > 100 ? "bg-white" : "bg-transparent"
             }`}
         >
             <nav className="flex max-w-7xl mx-auto justify-between items-center h-full">
@@ -75,7 +75,11 @@ export const NavBar = () => {
                                 <NavItem
                                     key={index + item}
                                     item={item}
-                                    className={textColor}
+                                    className={`${textColor} ${
+                                        scrollY > 100
+                                            ? "text-gray-800"
+                                            : "text-white"
+                                    }`}
                                     onClick={handleLinkClick}
                                 />
                             );
@@ -90,7 +94,11 @@ export const NavBar = () => {
                                         rel: "noopener noreferrer",
                                         target: "_blank",
                                     }}
-                                    className={textColor}
+                                    className={`{textColor} ${
+                                        scrollY > 100
+                                            ? "text-gray-800"
+                                            : "text-white"
+                                    }`}
                                 />
                             );
                         }
@@ -106,6 +114,8 @@ export const NavBar = () => {
                         <FaBars
                             className={`text-base transition-transform duration-500 ${
                                 isOpen ? "rotate-90 text-amber-600" : ""
+                            } ${
+                                scrollY > 100 ? "text-gray-800" : "text-white"
                             }`}
                         />
                     </button>

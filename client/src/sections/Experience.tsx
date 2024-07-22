@@ -14,7 +14,7 @@ export const Experience = () => {
     return (
         <section
             id="experience"
-            className="flex justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+            className="flex justify-start items-center min-h-screen h-auto min-w-[320px] p-4"
         >
             <div className="dynamic-padding pt-20 lg:pt-28">
                 <h3 className="text-3xl font-bold">&mdash; My Experience</h3>

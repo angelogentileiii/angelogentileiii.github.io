@@ -7,12 +7,12 @@ export const Contact: React.FC = () => {
     return (
         <section
             id="contact"
-            className="block mx-auto justify-start items-center min-h-screen h-auto bg-slate-200 min-w-[320px] p-4"
+            className="block mx-auto justify-start items-center min-h-screen h-auto min-w-[320px] p-4"
         >
             <div className="text-3xl font-bold pt-16 lg:pt-28 dynamic-padding">
                 <h3>&mdash; Let's Connect!</h3>
             </div>
-            <div className="block justify-center items-center w-full mb-10 bg-slate-200 pt-10 pb-4">
+            <div className="block justify-center items-center w-full mb-10 pt-10 pb-4">
                 <div className="mx-auto gap-8 md:max-w-[750px] min-w-[320px] mb-4 text-center">
                     <div className="w-full mx-auto mb-4">
                         <span className="text-lg text-center">

@@ -9,15 +9,9 @@ import { verifyRecaptchaToken } from "./src/middlewares/index.middlewares";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || "5500";
+const PORT = process.env.PORT || 5500;
 
-app.use(
-    cors({
-        origin: "http://localhost:5173", // Replace with your frontend URL
-        methods: ["GET", "POST", "OPTIONS"],
-        allowedHeaders: ["Content-Type"],
-    })
-);
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -26,7 +20,7 @@ app.use("/", verifyRecaptchaToken, emailRoutes);
 const serverRun = async () => {
     try {
         app.listen(PORT, () => {
-            console.log(`Server is running at http://localhost:${PORT}/`);
+            console.log(`Server is running at ${PORT}`);
         });
     } catch (error) {
         console.error("Error during server start:", error);
