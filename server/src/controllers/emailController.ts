@@ -4,7 +4,7 @@ import {
     SendBounceCommandOutput,
     SESClient,
 } from "@aws-sdk/client-ses";
-import { EmailReturnType, EmailSESPayload } from "../types/index.types";
+import { EmailReturnType, EmailSESPayload } from "../types/index.types.js";
 import { Request, Response, NextFunction } from "express";
 
 // Singleton SES client instance
