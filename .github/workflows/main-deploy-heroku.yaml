@@ -4,23 +4,46 @@ on:
     push:
         branches:
             - main # Trigger deployment on pushes to main branch
-    workflow_dispatch:
+    workflow_dispatch: # Trigger manual deployments
 
 jobs:
     build:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout repository
+            - name: Checkout Repository
               uses: actions/checkout@v3
 
+            - name: Set up Node.js
+              uses: actions/setup-node@v2
+              with:
+                  node-version: "14"
+
+            - name: Backend - Install Dependencies
+              run: npm install
+              working-directory: server # Install backend dependencies
+
+            - name: Frontend - Install Dependencies
+              run: npm install
+              working-directory: client # Install frontend dependencies
+
+            - name: Backend - Build
+              run: npm run build:backend # Build backend server
+
+            - name: Frontend - Build
+              run: npm run build:frontend # Build frontend app
+
+    deploy:
+        runs-on: ubuntu-latest
+
+        steps:
             - name: Deploy to Heroku
-              uses: akhileshns/heroku-deploy@v3.13.15
+              uses: akhileshns/heroku-deploy@v3.13.15 # Heroku deployment library
               with:
                   heroku_api_key: ${{secrets.HEROKU_API_KEY}}
                   heroku_app_name: "ajgiii-portfolio-site"
                   heroku_email: ${{ secrets.CONTACT_FORM_RECIPIENT }}
-              env:
+              env: # Environment variables with HD prefix for Heroku
                   HD_VITE_AWS_REGION: ${{ secrets.AWS_REGION }}
                   HD_VITE_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
                   HD_VITE_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

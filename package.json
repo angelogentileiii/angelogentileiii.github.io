@@ -5,13 +5,13 @@
     "description": "Portfolio site using Vite, TailwindCSS, and Node.js with TypeScript server.",
     "main": "index.js",
     "scripts": {
-        "frontend": "cd client && vite build --outDir ../public/client",
         "frontendDev": "vite --config client/vite.config.js",
-        "tailwind": "cd client && npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
-        "backend": "cd server && node server.ts",
         "backendDev": "nodemon server/server.ts",
+        "tailwind": "cd client && npx tailwindcss -i ./src/index.css -o ./src/output.css --watch",
         "dev": "concurrently \"npm run frontendDev\" \"npm run tailwind\" \"npm run backendDev\"",
-        "start": "npm run frontend & npm run tailwind & npm run backend"
+        "build:frontend": "cd client && vite build --outDir ../public/client/.dist",
+        "build:backend": "cd server && npm run build",
+        "start:backend": "cd server && node dist/server.js"
     },
     "keywords": [],
     "author": "",
@@ -22,6 +22,7 @@
         "nodemon": "^3.1.4"
     },
     "dependencies": {
+        "typescript": "^5.5.3",
         "vite": "^5.3.3"
     }
 }

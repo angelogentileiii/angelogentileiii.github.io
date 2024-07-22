@@ -1,8 +1,8 @@
 {
-    "name": "portofolio-site",
+    "name": "portofolio-site-client",
     "version": "0.1.0",
     "type": "module",
-    "homepage": "https://angelogentileiii.github.io",
+    "description": "Front-end Vite/TypeScript application with Tailwind.",
     "private": true,
     "dependencies": {
         "@aws-sdk/client-ses": "^3.609.0",
