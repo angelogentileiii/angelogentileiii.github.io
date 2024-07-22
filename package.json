@@ -5,13 +5,12 @@
     "description": "Portfolio site using Vite, TailwindCSS, and Node.js with TypeScript server.",
     "main": "index.js",
     "scripts": {
+        "install": "npm install --prefix server && npm install --prefix client",
         "frontendDev": "vite --config client/vite.config.js",
         "backendDev": "npm run dev --prefix server",
         "tailwind": "npm run tailwind --prefix client",
         "dev": "concurrently \"npm run frontendDev\" \"npm run tailwind\" \"npm run backendDev\"",
-        "build:frontend": "npm run build --prefix client",
-        "build:backend": "npm run build --prefix server",
-        "build": "npm run build:backend && npm run build:fronted",
+        "build": "npm run build --prefix server && npm run build --prefix client",
         "start": "node server/dist/server.js"
     },
     "keywords": [],
