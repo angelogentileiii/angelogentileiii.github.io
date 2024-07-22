@@ -1,5 +1,6 @@
 {
     "name": "portofolio-site",
+    "type": "module",
     "version": "1.0.0",
     "description": "Portfolio site using Vite, TailwindCSS, and Node.js with TypeScript server.",
     "main": "index.js",
