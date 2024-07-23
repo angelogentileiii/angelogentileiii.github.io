@@ -19,8 +19,8 @@ export const verifyRecaptchaToken = async (
             .json({ message: "Recaptcha token is missing or invalid." });
     }
 
-    const secretKey = process.env.VITE_RECAPTCHA_SECRET_KEY!;
-    const url = process.env.VITE_RECAPTCHA_URL!;
+    const secretKey = process.env.RECAPTCHA_SECRET_KEY!;
+    const url = process.env.RECAPTCHA_URL!;
 
     try {
         const params = new URLSearchParams({

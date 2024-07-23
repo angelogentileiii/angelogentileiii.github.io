@@ -2,7 +2,6 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import helmet from "helmet";
-import path from "path";
 
 import emailRoutes from "./routes/emailRoutes.js";
 
@@ -21,14 +20,6 @@ app.use(express.urlencoded({ extended: true }));
 
 // API routes
 app.use("/send-email", verifyRecaptchaToken, emailRoutes);
-
-// Serve static files from the React app
-app.use(express.static(path.join(__dirname, "../client/dist")));
-
-// Handle React routing, return the main index.html file
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../client/dist", "index.html"));
-});
 
 const serverRun = async () => {
     try {

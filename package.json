@@ -14,7 +14,7 @@
         "frontend:prod": "npm install --prefix client && npm run build --prefix client",
         "tailwind": "npm run tailwind --prefix client",
         "dev": "concurrently \"npm run frontend:dev\" \"npm run tailwind\" \"npm run backend:dev\"",
-        "build": "npm run backend:prod && npm run tailwind && npm run frontend:prod",
+        "build": "npm run backend:prod",
         "start": "node server/dist/server.js"
     },
     "keywords": [],

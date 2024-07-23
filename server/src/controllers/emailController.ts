@@ -13,10 +13,10 @@ let sesClient: SESClient | null = null;
 const getSESClient = (): SESClient => {
     if (!sesClient) {
         sesClient = new SESClient({
-            region: process.env.VITE_AWS_REGION,
+            region: process.env.AWS_REGION,
             credentials: {
-                accessKeyId: process.env.VITE_AWS_ACCESS_KEY!,
-                secretAccessKey: process.env.VITE_AWS_SECRET_ACCESS_KEY!,
+                accessKeyId: process.env.AWS_ACCESS_KEY!,
+                secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY!,
             },
         });
     }
@@ -46,9 +46,9 @@ export const handleSendEmail = async (
         req.body;
 
     const params = {
-        Source: process.env.VITE_CONTACT_FORM_SENDER!,
+        Source: process.env.CONTACT_FORM_SENDER!,
         Destination: {
-            ToAddresses: [process.env.VITE_CONTACT_FORM_RECIPIENT!],
+            ToAddresses: [process.env.CONTACT_FORM_RECIPIENT!],
         },
         Message: {
             Subject: {
