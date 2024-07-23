@@ -80,7 +80,7 @@ jobs:
             - name: Upload Artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: ../client/dist
+                  path: ./client/dist
 
     deploy-frontend:
         needs: build-frontend
@@ -93,4 +93,4 @@ jobs:
         steps:
             - name: Deploy to GitHub Pages
               id: deployment
-              uses: actions/deploy-pages@v3
+              uses: actions/deploy-pages@v4
