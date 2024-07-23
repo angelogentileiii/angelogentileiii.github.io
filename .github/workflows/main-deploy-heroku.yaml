@@ -6,6 +6,10 @@ on:
             - main # Trigger deployment on pushes to main branch
     workflow_dispatch: # Trigger manual deployments
 
+permissions:
+    pages: write
+    id-token: write
+
 concurrency:
     group: "pages"
     cancel-in-progress: false
@@ -51,7 +55,7 @@ jobs:
               uses: actions/cache@v3
               with:
                   path: ~/.npm
-                  key: ${{ runner.os }}-node-${{ hashFiles('client/package-lock.json') }}
+                  key: ${{ runner.os }}-node-${{ hashFiles('./client/package-lock.json') }}
                   restore-keys: |
                       ${{ runner.os }}-node-
 
@@ -81,10 +85,6 @@ jobs:
     deploy-frontend:
         needs: build-frontend
         runs-on: ubuntu-latest
-
-        permissions:
-            pages: write
-            id-token: write
 
         environment:
             name: github-pages
