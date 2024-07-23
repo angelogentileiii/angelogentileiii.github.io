@@ -35,7 +35,7 @@ const ContactForm: React.FC = () => {
             const token = await executeRecaptcha("contactForm");
 
             const emailResponse = await axios.post(
-                `${import.meta.env.VITE_SITE_URL}/send-email`,
+                `${import.meta.env.VITE_SITE_URL}send-email`,
                 {
                     ...data,
                     token,
