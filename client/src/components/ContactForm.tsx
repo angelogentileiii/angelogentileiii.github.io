@@ -9,7 +9,6 @@ import {
     GoogleReCaptchaProvider,
     useGoogleReCaptcha,
 } from "react-google-recaptcha-v3";
-// import verifyCaptchaAction from "../actions/captcha/verifyCaptchaAction";
 
 import axios from "axios";
 
@@ -36,7 +35,7 @@ const ContactForm: React.FC = () => {
             const token = await executeRecaptcha("contactForm");
 
             const emailResponse = await axios.post(
-                `${import.meta.env.VITE_SITE_URL}/send-email`,
+                `${process.env.VITE_SITE_URL}/send-email`,
                 {
                     ...data,
                     token,
@@ -111,7 +110,7 @@ export const ContactFormRecaptcha = () => {
     return (
         <div>
             <GoogleReCaptchaProvider
-                reCaptchaKey={import.meta.env.VITE_RECAPTCHA_SITE_KEY}
+                reCaptchaKey={process.env.VITE_RECAPTCHA_SITE_KEY!}
             >
                 <ContactForm />
             </GoogleReCaptchaProvider>
