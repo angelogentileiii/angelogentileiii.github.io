@@ -35,7 +35,7 @@ const ContactForm: React.FC = () => {
             const token = await executeRecaptcha("contactForm");
 
             const emailResponse = await axios.post(
-                `${process.env.VITE_SITE_URL}/send-email`,
+                `${import.meta.env.VITE_SITE_URL}/send-email`,
                 {
                     ...data,
                     token,
@@ -106,12 +106,12 @@ const ContactForm: React.FC = () => {
     );
 };
 
+const reCaptchaKey = import.meta.env.VITE_RECAPTCHA_SITE_KEY!;
+
 export const ContactFormRecaptcha = () => {
     return (
         <div>
-            <GoogleReCaptchaProvider
-                reCaptchaKey={process.env.VITE_RECAPTCHA_SITE_KEY!}
-            >
+            <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
                 <ContactForm />
             </GoogleReCaptchaProvider>
         </div>
