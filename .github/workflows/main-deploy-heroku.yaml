@@ -55,7 +55,7 @@ jobs:
               uses: actions/cache@v3
               with:
                   path: ~/.npm
-                  key: ${{ runner.os }}-node-${{ hashFiles('./client/package-lock.json') }}
+                  key: ${{ runner.os }}-node-${{ hashFiles('**/client/package-lock.json') }}
                   restore-keys: |
                       ${{ runner.os }}-node-
 
@@ -80,7 +80,7 @@ jobs:
             - name: Upload Artifact
               uses: actions/upload-pages-artifact@v3
               with:
-                  path: ./client/dist
+                  path: ../client/dist
 
     deploy-frontend:
         needs: build-frontend

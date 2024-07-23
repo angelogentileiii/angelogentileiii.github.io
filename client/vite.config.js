@@ -6,7 +6,6 @@ export default defineConfig(({ mode }) => {
     const isProduction = mode === "production";
 
     return {
-        root: "client",
         base: "/",
         plugins: [react()],
         optimizeDeps: {
@@ -16,7 +15,7 @@ export default defineConfig(({ mode }) => {
             postcss: "client/postcss.config.js",
         },
         build: {
-            outDir: "dist",
+            outDir: "./dist",
             rollupOptions: {
                 input: "src/index.tsx",
             },
