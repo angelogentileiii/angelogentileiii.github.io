@@ -1,17 +1,17 @@
 {
     "workData": [
         {
-            "workDates": 2024,
+            "workDates": ["Apr 2024", "Jun 2024"],
             "position": "Software Engineer - Intern",
             "company": "Point Focal",
             "workDetails": [
-                "Updated front-end TypeScript to incorporate new client modules and better the overall User Experience",
-                "Built, developed, and deployed an event-triggered AWS Lambda function to clean and insert financial data in the production MySQL database",
-                "Constructed an AWS CloudFormation template to deploy a new AWS S3 Bucket for the data to be stored, triggering the associated Lambda functionality",
-                "Developed a Ruby-based Selenium web scraping tool to automatically retrieve available reports from financial institutions",
+                "Developed a financial reporting retrieval system by integrating AWS services and a custom-built Ruby web scraper, providing clients with new business insights and analysis during the market's transition to a T+1 time frame",
+                "Designed an event-driven ETL pipeline utilizing AWS S3, Lambda functions, and CloudFormation templates to process SEC failure-to-deliver data, streamlining data ingestion and enhancing operational efficiency",
+                "Engineered GitHub Action workflows to create a seamless deployment process, ensuring efficient integration and delivery of development and production changes, while expanding automated CI/CD pipelines",
+                "Utilized Python's Pandas library to process and examine portfolio CSV files, developing a tailored analysis that highlights shortfall implementation across the designated trading period",
                 "Leveraged Python Pandas to clean and analyze data sheets and to develop and export new files to be used for data visualization with Spotfire DXPs",
-                "Constructed Spotfire data connectors to production database for data visualization and analysis",
-                "Managed the email marketing and informational campaigns of the company, sent to over two thousand stakeholders"
+                "Implemented new end-to-end functionality, incorporating Spotfire API integrations, that maintains stylistic uniformity and streamline user experience in the React/TypeScript front-end application",
+                "Used MailChimp and Hubspot to build, design, and manage informational marketing campaigns, reaching over two thousand stakeholders on a weekly basis"
             ]
         },
         {

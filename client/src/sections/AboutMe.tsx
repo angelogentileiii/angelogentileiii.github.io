@@ -12,12 +12,12 @@ export const AboutMe: React.FC = () => {
             <div className="flex flex-col lg:flex-row items-center w-full lg:mb-20 pt-16 pb-4 px-4">
                 <div
                     id="profileimage"
-                    className="flex justify-center items-center mb-16 mx-auto lg:mr-16 lg:mb-0 lg:w-2/5 h-auto"
+                    className="flex w-auto justify-center items-center mb-16 mx-auto lg:mx-8 lg:mb-0 lg:w-2/5 h-auto rounded-full bg-amber-600 bg-opacity-15"
                 >
                     <img
                         src="/assets/img/Angelo-Profile.png"
                         alt="Profile image of Angelo Gentile III"
-                        className="flex w-full max-h-[500px] lg:h-full lg:aspect-auto lg:max-h-full rounded-lg"
+                        className="flex max-h-[500px] lg:h-full lg:aspect-auto lg:max-h-full"
                     />
                 </div>
                 <div className="pl-4 text-start mx-auto lg:w-3/5 lg:text-left">
