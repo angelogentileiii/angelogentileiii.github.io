@@ -3,7 +3,7 @@ name: Deploy Portfolio Site Backend to Heroku
 on:
     push:
         branches: main
-        paths: "server"
+        paths: "server/**"
     workflow_dispatch:
 
 jobs:
