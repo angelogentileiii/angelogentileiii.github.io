@@ -69,17 +69,15 @@ export const NavBar = () => {
                         const textColor =
                             activeSection === item
                                 ? "text-amber-600"
-                                : "text-gray-800";
+                                : scrollY > 100
+                                ? "text-gray-800"
+                                : "text-white";
                         if (item !== "Resume") {
                             return (
                                 <NavItem
                                     key={index + item}
                                     item={item}
-                                    className={`${textColor} ${
-                                        scrollY > 100
-                                            ? "text-gray-800"
-                                            : "text-white"
-                                    }`}
+                                    className={textColor}
                                     onClick={handleLinkClick}
                                 />
                             );
@@ -94,11 +92,7 @@ export const NavBar = () => {
                                         rel: "noopener noreferrer",
                                         target: "_blank",
                                     }}
-                                    className={`{textColor} ${
-                                        scrollY > 100
-                                            ? "text-gray-800"
-                                            : "text-white"
-                                    }`}
+                                    className={textColor}
                                 />
                             );
                         }
