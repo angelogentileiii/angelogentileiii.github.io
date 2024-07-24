@@ -1,7 +1,7 @@
-name: Deploy Portfolio Site to Heroku #Original Workflow for Entire Application (Frontend/Backend)
+name: Deploy Full Portfolio Site #Original Workflow for Entire Application (Frontend/Backend)
 
 on:
-    push:
+    # push:
         # branches:
         #     - main # Trigger deployment on pushes to main branch
     workflow_dispatch: # Trigger manual deployments
