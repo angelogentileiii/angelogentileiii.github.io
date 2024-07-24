@@ -12,7 +12,7 @@ export const HeroSection = () => {
                 <br />
                 <h1 className="text-2xl">
                     Software Engineer
-                    <span className="text-amber-600"> ||| </span>
+                    <span className="text-amber-600 text-3xl"> ||| </span>
                     Restaurant Enthusiast
                 </h1>
             </div>

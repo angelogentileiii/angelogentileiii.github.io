@@ -1,0 +1,52 @@
+name: Deploy Portfolio Site Backend to Heroku
+
+on:
+    push:
+        branches: main
+        paths: "server"
+    workflow_dispatch:
+
+jobs:
+    changed-files:
+        runs-on: ubuntu-latest
+
+        outputs:
+            files: ${{ steps.listChangedFiles.outputs.all_changed_files }}
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: List changed files
+              id: listChangedFiles
+              uses: tj-actions/changed-files@v35.9.2
+
+            - name: Print changed files
+              run: echo "${{ steps.listChangedFiles.outputs.all_changed_files }}"
+
+    build-deploy-backend:
+        runs-on: ubuntu-latest
+        needs: changed-files
+
+        if: ${{ contains(needs.changed-files.outputs.files, 'server') }}
+
+        steps:
+            - name: Checkout Repository
+              uses: actions/checkout@v3
+
+            - name: Deploy to Heroku
+              uses: akhileshns/heroku-deploy@v3.13.15 # Heroku deployment library
+              with:
+                  branch: main
+                  heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+                  heroku_app_name: "ajgiii-portfolio-site"
+                  heroku_email: ${{ secrets.HEROKU_EMAIL }}
+              env: # Environment variables with HD prefix for Heroku
+                  HD_AWS_REGION: ${{ secrets.AWS_REGION }}
+                  HD_AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+                  HD_AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+                  HD_RECAPTCHA_URL: ${{ secrets.GOOGLE_RECAPTCHA_URL }}
+                  HD_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
+                  HD_RECAPTCHA_SECRET_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SECRET_KEY }}
+                  HD_CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
+                  HD_CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}

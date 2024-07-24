@@ -1,9 +1,9 @@
-name: Deploy Portfolio Site to Heroku
+name: Deploy Portfolio Site to Heroku #Original Workflow for Entire Application (Frontend/Backend)
 
 on:
     push:
-        branches:
-            - main # Trigger deployment on pushes to main branch
+        # branches:
+        #     - main # Trigger deployment on pushes to main branch
     workflow_dispatch: # Trigger manual deployments
 
 permissions:
@@ -36,6 +36,8 @@ jobs:
                   HD_RECAPTCHA_URL: ${{ secrets.GOOGLE_RECAPTCHA_URL }}
                   HD_RECAPTCHA_SITE_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SITE_KEY }}
                   HD_RECAPTCHA_SECRET_KEY: ${{ secrets.GOOGLE_RECAPTCHA_SECRET_KEY }}
+                  HD_CONTACT_FORM_SENDER: ${{ secrets.CONTACT_FORM_SENDER }}
+                  HD_CONTACT_FORM_RECIPIENT: ${{ secrets.CONTACT_FORM_RECIPIENT }}
 
     build-frontend:
         runs-on: ubuntu-latest

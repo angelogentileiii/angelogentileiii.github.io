@@ -3,13 +3,13 @@ import { ExperienceData, Experience } from "../../types/index.types";
 
 export const ExperienceItem: React.FC<ExperienceData> = ({ workData }) => {
     return (
-        <div className="hello">
+        <div className="mx-auto flex flex-col items-center">
             {workData.map((experience: Experience, index: number) => {
                 const { workDates, workDetails, position, company } =
                     experience;
                 return (
                     <article
-                        className="m-8"
+                        className="px-4 md:px-16 my-8 w-full text-left"
                         key={index + experience.company + experience.position}
                     >
                         <h3 className="text-xl font-bold">{position}</h3>
