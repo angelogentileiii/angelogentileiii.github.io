@@ -23,25 +23,25 @@ export const AboutMe: React.FC = () => {
                 <div className="pl-4 text-start mx-auto lg:w-3/5 lg:text-left">
                     <p className="text-base mb-8">
                         My name is{" "}
-                        <span className="text-amber-600">Angelo Gentile</span>{" "}
-                        and as a full-stack software engineer and former digital
-                        imaging technician, I have spent over 9 years thriving
-                        in the dynamic, high-pressure environment of the
-                        multi-billion dollar film and television industry. This
-                        experience has fueled my determination and honed my
-                        detail-oriented nature, driving me to transition into a
-                        more technology-forward role where I can merge my
-                        creative and technical expertise.
+                        <span className="text-amber-600">Angelo Gentile</span>,
+                        a full-stack software engineer and former IATSE Local
+                        600 camera and digital imaging technician, with over 9
+                        years of thriving in the dynamic, high-pressure
+                        environment of the multi-billion dollar film and
+                        television industry. This experience has fueled my
+                        determination and honed my detail-oriented nature,
+                        driving me to transition into a more technology-forward
+                        role where I can merge my creative and technical
+                        expertise.
                         <br />
-                        <br />
-                        My passion lies in designing clean, maintainable code
-                        that meets stakeholders' needs effectively. The
-                        demanding nature of the film and television industry has
-                        sharpened my communication and team skills, making me a
-                        reliable and collaborative team player. I am a technical
-                        developer with the heart of an artist, committed to
-                        building strong connections and delivering exceptional
-                        results.
+                        <br />I am passionate about designing clean,
+                        maintainable code that effectively meets stakeholders'
+                        needs. The demanding nature of the film and television
+                        industry has sharpened my communication and team skills,
+                        making me a reliable and collaborative team player. As a
+                        technical developer with the heart of an artist, I am
+                        committed to building strong connections and delivering
+                        exceptional results.
                     </p>
                     <a
                         className="mt-4 bg-amber-600 hover:bg-opacity-80 text-white py-2 px-4 rounded-md"

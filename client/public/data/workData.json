@@ -9,9 +9,9 @@
                 "Designed an event-driven ETL pipeline utilizing AWS S3, Lambda functions, and CloudFormation templates to process SEC failure-to-deliver data, streamlining data ingestion and enhancing operational efficiency",
                 "Engineered GitHub Action workflows to create a seamless deployment process, ensuring efficient integration and delivery of development and production changes, while expanding automated CI/CD pipelines",
                 "Utilized Python's Pandas library to process and examine portfolio CSV files, developing a tailored analysis that highlights shortfall implementation across the designated trading period",
-                "Leveraged Python Pandas to clean and analyze data sheets and to develop and export new files to be used for data visualization with Spotfire DXPs",
+                "Streamlined financial data cleaning and integration, with Pandas, for seamless integration into Spotfire DXPs, optimizing our 'data-to-visualization' pipeline",
                 "Implemented new end-to-end functionality, incorporating Spotfire API integrations, that maintains stylistic uniformity and streamline user experience in the React/TypeScript front-end application",
-                "Used MailChimp and Hubspot to build, design, and manage informational marketing campaigns, reaching over two thousand stakeholders on a weekly basis"
+                "Leveraged MailChimp and Hubspot to build, design, and manage informational marketing campaigns, reaching over two thousand stakeholders on a weekly basis"
             ]
         },
         {
@@ -19,10 +19,11 @@
             "position": "Digital Imaging Technician",
             "company": "IATSE - Local 600",
             "workDetails": [
-                "Serves as a direct connection between the on-set visual production and the post workflow at the respective post-production facility, whether internal or external",
-                "In charge of managing and controlling multiple-camera systems simultaneously through local network control and specialized software programs",
-                "Responsible for the consistent exposure and color control of all camera systems, including variances through different optics",
-                "Ensures that all issues are properly elevated, when necessary, and resolved in a timely manner as to not detract from the strict daily production schedule"
+                "Utilizes DaVinci Resolve Studio to create custom LUT files for daily production, ensuring consistent color space and exposure alignment across diverse camera systems, while adhering to the production's creative vision",
+                "Leverages Pomfort Silverstack for MD5 and xxHash-64 checksums during file transfer from camera media to production RAIDs, guaranteeing file security and mitigating opportunities for data corruption",
+                "Constructed a mobile LAN mesh network to enable comprehensive remote control of camera systems, ensuring seamless operation and enhanced accessibility throughout physical production",
+                "Designs and optimizes daily production strategies for technical camera systems, collaborating with production stakeholders to provide effective leadership and streamline operations",
+                "Integrates with post-production and visual effects departments to ensure proper transcoding and seamless delivery of captured data, facilitating a smooth transition from production to post-production workflows"
             ]
         },
         {
@@ -30,11 +31,11 @@
             "position": "Camera Assistant / Technician",
             "company": "IATSE - Local 600",
             "workDetails": [
-                "Integral part of the camera department through the production phase of a film, television, or commercial production",
-                "Builds and maintains the proper functionality of all camera-related items and accessories on a day-to-day basis",
-                "Constantly expanding technical knowledge of new camera systems and technologies in order to immediately implement items into production",
-                "Responsible for the hiring and onboarding of multiple camera teams across the run of production",
-                "Integrates with all on-set departments to facilitate all needs and resolve any issues related to the camera department or camera equipment"
+                "Builds and maintains the proper functionality of all camera department related systems and technologies, ensuring readiness to learn and implement new technologies or systems as they arise each day, facilitating seamless adaptation and operational continuity",
+                "Responsible for overseeing the hiring, onboarding, and management of multiple camera teams throughout the entire production lifecycle, ensuring seamless integration and effective team collaboration",
+                "Integrates collaboratively across all on-set departments to address and fulfill all camera department requirements, proactively resolving issues and ensuring seamless coordination to support adherence to daily production timeline",
+                "Specializes in diverse camera technologies, including ARRI, Sony, and RED, and adept at navigating and optimizing proprietary camera systems to ensure optimal settings and functionality throughout production",
+                "Collaborates closely with Visual Effects departments to ensure accurate capture and recording of essential data per shot, facilitating seamless integration for the creation of computer-generated visuals aligned with captured media"
             ]
         }
     ]
