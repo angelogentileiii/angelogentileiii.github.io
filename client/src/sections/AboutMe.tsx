@@ -25,7 +25,7 @@ export const AboutMe: React.FC = () => {
                         My name is{" "}
                         <span className="text-amber-600">Angelo Gentile</span>,
                         a full-stack software engineer and former IATSE Local
-                        600 camera and digital imaging technician, with over 9
+                        600 camera assistant and digital imaging technician, with over 9
                         years of thriving in the dynamic, high-pressure
                         environment of the multi-billion dollar film and
                         television industry. This experience has fueled my
