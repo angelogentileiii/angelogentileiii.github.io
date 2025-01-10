@@ -5,7 +5,7 @@ export const HeroSection = () => {
             <div className="absolute inset-0 z-0 bg-hero-image bg-cover bg-center"></div>
 
             {/* Overlay */}
-            <div className="absolute inset-0 z-10 bg-black opacity-25"></div>
+            <div className="absolute inset-0 z-10 bg-black opacity-15"></div>
 
             <div className="relative z-20 dynamic-padding text-white">
                 <h3 className="text-7xl">Angelo Gentile</h3>
