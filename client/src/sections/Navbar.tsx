@@ -8,7 +8,8 @@ export const NavBar = () => {
     const [scrollY, setScrollY] = useState(0);
     const [activeSection, setActiveSection] = useState("");
 
-    const sections = ["About", "Experience", "Portfolio", "Contact", "Resume"];
+    // const sections = ["About", "Experience", "Portfolio", "Contact", "Resume"];
+    const sections = ["About", "Experience", "Portfolio", "Resume"]; // No Contact section for now
 
     const toggleMenu = () => setIsOpen((prev) => !prev);
     const handleLinkClick = () => {
